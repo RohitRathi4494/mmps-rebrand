@@ -37,12 +37,12 @@ function Header() {
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-black/5'
+          ? 'bg-white shadow-lg shadow-black/5'
           : 'bg-transparent'
       }`}
     >
-      {/* Colorful top accent bar */}
-      <div className="rainbow-line" />
+      {/* Solid accent bar */}
+      <div className="h-1 bg-accent-500" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -52,12 +52,12 @@ function Header() {
               src="/images/logo.jpg"
               alt="M M Public School Logo"
               className={`w-12 h-12 rounded-full object-cover border-2 transition-all duration-300 ${
-                isScrolled ? 'border-accent-500' : 'border-gold-400'
+                isScrolled ? 'border-accent-500' : 'border-white'
               } group-hover:scale-105`}
             />
             <div>
               <h1 className={`font-heading font-bold text-lg leading-tight transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
+                isScrolled ? 'text-primary-600' : 'text-white'
               }`}>
                 M M Public School
               </h1>
@@ -86,7 +86,7 @@ function Header() {
             ))}
             <a
               href="#admissions"
-              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600 text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-accent-500/30 transition-all duration-300 hover:-translate-y-0.5"
+              className="ml-4 px-6 py-2.5 bg-accent-500 text-white text-sm font-semibold rounded-full hover:bg-accent-600 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Admissions 2026-27
             </a>
@@ -123,7 +123,7 @@ function Header() {
             <a
               href="#admissions"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-center mt-3 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-full"
+              className="block text-center mt-3 px-6 py-3 bg-accent-500 text-white font-semibold rounded-full hover:bg-accent-600"
             >
               Admissions 2026-27
             </a>
@@ -144,16 +144,11 @@ function Hero() {
       className="relative min-h-screen flex items-center justify-center hero-parallax"
       style={{ backgroundImage: 'url(/images/hero-school.png)' }}
     >
-      {/* Rich multi-color gradient overlay */}
+      {/* Solid dark overlay */}
       <div className="absolute inset-0 hero-overlay" />
 
-      {/* Colorful floating blobs */}
-      <div className="absolute top-20 left-10 w-80 h-80 blob-yellow rounded-full animate-float" />
-      <div className="absolute bottom-32 right-10 w-96 h-96 blob-blue rounded-full animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 blob-red rounded-full animate-float" style={{ animationDelay: '4s' }} />
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* CBSE Badge - golden */}
+        {/* CBSE Badge */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold-500/20 backdrop-blur-sm text-gold-300 text-sm font-medium mb-8 animate-fade-in border border-gold-400/30">
           <Award size={16} className="text-gold-400" />
           <span>CBSE Affiliated · Sector 4, Gurugram</span>
@@ -162,9 +157,7 @@ function Hero() {
         {/* Main Headline */}
         <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           Nurturing{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-accent-400">
-            Global Citizens
-          </span>
+          <span className="text-gold-400">Global Citizens</span>
           <br />
           Since 1992
         </h2>
@@ -175,12 +168,12 @@ function Hero() {
           holistic development, modern learning, and building tomorrow's leaders.
         </p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons — solid colors */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <a
             href="#admissions"
             id="cta-book-tour"
-            className="group px-8 py-4 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600 text-white font-semibold rounded-full shadow-xl shadow-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/40 transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 text-lg"
+            className="group px-8 py-4 bg-accent-500 text-white font-semibold rounded-full shadow-xl hover:bg-accent-600 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 text-lg"
           >
             <Calendar size={20} />
             Book School Tour
@@ -189,7 +182,7 @@ function Hero() {
           <a
             href="#admissions"
             id="cta-admission-enquiry"
-            className="px-8 py-4 bg-gold-500/20 backdrop-blur-sm text-white font-semibold rounded-full border border-gold-400/40 hover:bg-gold-500/30 transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 text-lg"
+            className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 text-lg"
           >
             <GraduationCap size={20} />
             Admission Enquiry 2026-27
@@ -199,7 +192,7 @@ function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 scroll-indicator">
-        <div className="flex flex-col items-center gap-2 text-gold-400/60">
+        <div className="flex flex-col items-center gap-2 text-white/50">
           <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
           <ChevronDown size={20} />
         </div>
@@ -209,14 +202,14 @@ function Hero() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   STATS BAR  — Full-color navy gradient
+   STATS BAR — Solid navy
    ═══════════════════════════════════════════════════════════ */
-function StatItem({ icon: Icon, value, suffix, label, delay, color }) {
+function StatItem({ icon: Icon, value, suffix, label, delay, iconColor }) {
   const countRef = useCounter(value)
   return (
     <div className={`animate-on-scroll animate-delay-${delay} flex flex-col items-center text-center p-6 sm:p-8 group`}>
-      <div className={`w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
-        <Icon size={26} className={color} />
+      <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300">
+        <Icon size={26} className={iconColor} />
       </div>
       <div className="flex items-baseline gap-1">
         <span ref={countRef} className="font-heading font-bold text-3xl sm:text-4xl text-white counter-number">0</span>
@@ -231,22 +224,22 @@ function StatsBar() {
   return (
     <section className="relative z-20 -mt-1">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="stats-bar rounded-2xl shadow-2xl shadow-primary-900/30 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10 overflow-hidden">
-          <YearStat icon={Clock} label="Established" delay={1} color="text-gold-400" />
-          <StatItem icon={Users} value={800} suffix="+" label="Happy Students" delay={2} color="text-emerald-400" />
-          <StatItem icon={Building2} value={5} suffix="" label="Acre Green Campus" delay={3} color="text-sky-400" />
-          <TextStat icon={Award} text="CBSE" label="Affiliated" delay={4} color="text-accent-300" />
+        <div className="bg-primary-600 rounded-2xl shadow-2xl grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10 overflow-hidden">
+          <YearStat icon={Clock} label="Established" delay={1} iconColor="text-gold-400" />
+          <StatItem icon={Users} value={800} suffix="+" label="Happy Students" delay={2} iconColor="text-emerald-400" />
+          <StatItem icon={Building2} value={5} suffix="" label="Acre Green Campus" delay={3} iconColor="text-sky-400" />
+          <TextStat icon={Award} text="CBSE" label="Affiliated" delay={4} iconColor="text-accent-300" />
         </div>
       </div>
     </section>
   )
 }
 
-function YearStat({ icon: Icon, label, delay, color }) {
+function YearStat({ icon: Icon, label, delay, iconColor }) {
   return (
     <div className={`animate-on-scroll animate-delay-${delay} flex flex-col items-center text-center p-6 sm:p-8 group`}>
-      <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
-        <Icon size={26} className={color} />
+      <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300">
+        <Icon size={26} className={iconColor} />
       </div>
       <span className="font-heading font-bold text-3xl sm:text-4xl text-white">Since 1992</span>
       <span className="text-sm text-blue-200 font-medium mt-1">{label}</span>
@@ -254,11 +247,11 @@ function YearStat({ icon: Icon, label, delay, color }) {
   )
 }
 
-function TextStat({ icon: Icon, text, label, delay, color }) {
+function TextStat({ icon: Icon, text, label, delay, iconColor }) {
   return (
     <div className={`animate-on-scroll animate-delay-${delay} flex flex-col items-center text-center p-6 sm:p-8 group`}>
-      <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
-        <Icon size={26} className={color} />
+      <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300">
+        <Icon size={26} className={iconColor} />
       </div>
       <span className="font-heading font-bold text-3xl sm:text-4xl text-white">{text}</span>
       <span className="text-sm text-blue-200 font-medium mt-1">{label}</span>
@@ -267,7 +260,7 @@ function TextStat({ icon: Icon, text, label, delay, color }) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   WHY MMPS SECTION — Colorful cards
+   WHY MMPS SECTION — Clean solid cards
    ═══════════════════════════════════════════════════════════ */
 function WhyMMPS() {
   const features = [
@@ -275,52 +268,36 @@ function WhyMMPS() {
       icon: Heart,
       title: 'Holistic Development',
       description: 'We nurture academic excellence alongside life skills, creativity, and emotional intelligence for well-rounded growth.',
-      gradient: 'from-accent-500 to-accent-600',
-      bgGradient: 'from-accent-50 via-red-50 to-orange-50',
-      borderColor: 'hover:border-accent-200',
-      glowClass: 'card-glow-red',
-      iconBg: 'bg-gradient-to-br from-accent-500 to-rose-500',
+      iconBg: 'bg-accent-500',
+      accentColor: 'bg-accent-500',
     },
     {
       icon: Building2,
       title: 'Modern Infrastructure',
       description: 'Smart classrooms, state-of-the-art labs, expansive sports facilities, and a lush 5-acre green campus designed for learning.',
-      gradient: 'from-sky-500 to-blue-600',
-      bgGradient: 'from-sky-50 via-blue-50 to-indigo-50',
-      borderColor: 'hover:border-sky-200',
-      glowClass: 'card-glow-blue',
-      iconBg: 'bg-gradient-to-br from-sky-500 to-blue-600',
+      iconBg: 'bg-sky-500',
+      accentColor: 'bg-sky-500',
     },
     {
       icon: Star,
       title: 'Experienced Faculty',
       description: 'Our dedicated team of qualified educators brings passion, expertise, and individual attention to every student\'s journey.',
-      gradient: 'from-gold-500 to-amber-600',
-      bgGradient: 'from-gold-50 via-amber-50 to-yellow-50',
-      borderColor: 'hover:border-gold-200',
-      glowClass: 'card-glow-gold',
-      iconBg: 'bg-gradient-to-br from-gold-500 to-amber-500',
+      iconBg: 'bg-gold-500',
+      accentColor: 'bg-gold-500',
     },
   ]
 
   return (
-    <section id="about" className="py-20 sm:py-28 bg-warm-gradient relative overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 blob-yellow rounded-full" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 blob-blue rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 sm:py-28 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-primary-600 text-sm font-medium mb-4 shadow-sm border border-primary-100">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
             <Sparkles size={14} className="text-gold-500" />
             Why Choose Us
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4">
-            Why{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-accent-500 to-gold-500">
-              M M Public School?
-            </span>
+            Why <span className="text-primary-600">M M Public School?</span>
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -329,27 +306,25 @@ function WhyMMPS() {
           </p>
         </div>
 
-        {/* Feature Cards — each with unique color */}
+        {/* Feature Cards — clean white with solid color accents */}
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, i) => (
             <div
               key={i}
-              className={`animate-on-scroll animate-delay-${i + 1} group relative bg-gradient-to-br ${feature.bgGradient} rounded-2xl p-8 card-hover border border-white/80 ${feature.borderColor} ${feature.glowClass} overflow-hidden`}
+              className={`animate-on-scroll animate-delay-${i + 1} group relative bg-white rounded-2xl p-8 card-hover border border-gray-100 overflow-hidden`}
             >
-              {/* Top accent strip */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient}`} />
+              {/* Solid top accent strip */}
+              <div className={`absolute top-0 left-0 right-0 h-1 ${feature.accentColor}`} />
 
-              <div className="relative">
-                <div className={`w-16 h-16 rounded-2xl ${feature.iconBg} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                  <feature.icon size={28} className="text-white" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  {feature.description}
-                </p>
+              <div className={`w-14 h-14 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                <feature.icon size={26} className="text-white" />
               </div>
+              <h3 className="font-heading font-semibold text-xl text-gray-900 mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-500 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -359,7 +334,7 @@ function WhyMMPS() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   LEADERSHIP MESSAGES — Colorful cards
+   LEADERSHIP MESSAGES — Clean solid accents
    ═══════════════════════════════════════════════════════════ */
 function LeadershipMessages() {
   const leaders = [
@@ -368,50 +343,41 @@ function LeadershipMessages() {
       name: 'Sh. Maru Mal Ji',
       title: 'Chairman',
       message: "Education is the most powerful tool to transform lives. At M M Public School, we are committed to building a generation of confident, compassionate, and responsible citizens who will lead India into a brighter future.",
-      color: 'from-primary-600 to-primary-800',
-      borderAccent: 'border-t-primary-600',
-      badgeBg: 'bg-gradient-to-r from-primary-600 to-primary-700',
-      ringColor: 'ring-primary-200',
+      accentColor: 'border-t-primary-600',
+      badgeBg: 'bg-primary-600',
+      ringColor: 'ring-primary-100',
     },
     {
       image: '/images/director.png',
       name: 'Sh. Rajendra Prasad',
       title: 'Director',
       message: "Our vision goes beyond textbooks. We strive to create an environment where every child discovers their unique potential, develops critical thinking, and embraces values that last a lifetime.",
-      color: 'from-accent-500 to-accent-700',
-      borderAccent: 'border-t-accent-500',
-      badgeBg: 'bg-gradient-to-r from-accent-500 to-accent-600',
-      ringColor: 'ring-accent-200',
+      accentColor: 'border-t-accent-500',
+      badgeBg: 'bg-accent-500',
+      ringColor: 'ring-accent-100',
     },
     {
       image: '/images/principal.png',
       name: 'Mrs. Sunita Sharma',
       title: 'Principal',
       message: "At MMPS, every day is an opportunity to inspire. Our dedicated team ensures that each student receives personalized attention, a nurturing atmosphere, and the tools to excel both academically and personally.",
-      color: 'from-gold-500 to-gold-600',
-      borderAccent: 'border-t-gold-500',
-      badgeBg: 'bg-gradient-to-r from-gold-500 to-amber-500',
-      ringColor: 'ring-gold-200',
+      accentColor: 'border-t-gold-500',
+      badgeBg: 'bg-gold-500',
+      ringColor: 'ring-gold-100',
     },
   ]
 
   return (
-    <section className="py-20 sm:py-28 bg-cool-gradient relative overflow-hidden dot-pattern">
-      <div className="absolute top-10 right-10 w-72 h-72 blob-violet rounded-full" />
-      <div className="absolute bottom-10 left-10 w-64 h-64 blob-green rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-primary-600 text-sm font-medium mb-4 shadow-sm border border-primary-100">
-            <UserCircle size={14} className="text-accent-500" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-50 text-accent-500 text-sm font-medium mb-4">
+            <UserCircle size={14} />
             Our Leadership
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4">
-            Messages from{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-accent-500 to-gold-500">
-              Our Leaders
-            </span>
+            Messages from <span className="text-accent-500">Our Leaders</span>
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -420,17 +386,17 @@ function LeadershipMessages() {
           </p>
         </div>
 
-        {/* Leadership Cards — each with unique color accent */}
+        {/* Leadership Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {leaders.map((leader, i) => (
             <div
               key={i}
-              className={`animate-on-scroll animate-delay-${i + 1} group relative bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 border-t-4 ${leader.borderAccent}`}
+              className={`animate-on-scroll animate-delay-${i + 1} group relative bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 border-t-4 ${leader.accentColor}`}
             >
               <div className="p-8 text-center">
                 {/* Portrait */}
                 <div className="relative inline-block mb-6">
-                  <div className={`w-28 h-28 rounded-full overflow-hidden ring-4 ${leader.ringColor} group-hover:ring-offset-2 transition-all duration-300 mx-auto shadow-lg`}>
+                  <div className={`w-28 h-28 rounded-full overflow-hidden ring-4 ${leader.ringColor} mx-auto shadow-lg`}>
                     <img
                       src={leader.image}
                       alt={`${leader.name} - ${leader.title}, M M Public School`}
@@ -438,7 +404,7 @@ function LeadershipMessages() {
                       loading="lazy"
                     />
                   </div>
-                  {/* Title badge */}
+                  {/* Title badge — solid color */}
                   <div className={`absolute -bottom-2 left-1/2 -translate-x-1/2 px-4 py-1 ${leader.badgeBg} text-white text-xs font-semibold rounded-full shadow-md whitespace-nowrap`}>
                     {leader.title}
                   </div>
@@ -451,7 +417,7 @@ function LeadershipMessages() {
 
                 {/* Quote */}
                 <div className="relative">
-                  <Quote size={16} className="text-accent-200 absolute -top-2 -left-1" />
+                  <Quote size={16} className="text-gray-200 absolute -top-2 -left-1" />
                   <p className="text-gray-500 text-sm leading-relaxed italic pl-4">
                     {leader.message}
                   </p>
@@ -466,38 +432,34 @@ function LeadershipMessages() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   ADMISSIONS SPOTLIGHT — Warm colorful background
+   ADMISSIONS SPOTLIGHT
    ═══════════════════════════════════════════════════════════ */
 function Admissions() {
   const highlights = [
-    { text: 'Age-appropriate, CBSE-aligned curriculum tailored for each developmental stage', color: 'text-emerald-600', bg: 'bg-emerald-100' },
-    { text: 'Individual attention with optimal student-teacher ratio for personalized learning', color: 'text-sky-600', bg: 'bg-sky-100' },
-    { text: 'Safe, nurturing environment with CCTV surveillance and trained support staff', color: 'text-gold-600', bg: 'bg-gold-100' },
+    'Age-appropriate, CBSE-aligned curriculum tailored for each developmental stage',
+    'Individual attention with optimal student-teacher ratio for personalized learning',
+    'Safe, nurturing environment with CCTV surveillance and trained support staff',
   ]
 
   return (
-    <section id="admissions" className="py-20 sm:py-28 bg-sunset-gradient relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 blob-red rounded-full" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 blob-yellow rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="admissions" className="py-20 sm:py-28 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image Side */}
           <div className="animate-on-scroll relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/50">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="/images/classroom.png"
                 alt="Students engaged in collaborative learning at M M Public School classroom"
                 className="w-full h-[400px] sm:h-[480px] object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 via-transparent to-transparent" />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 sm:right-8 bg-white rounded-2xl shadow-xl p-5 border border-emerald-100 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute -bottom-6 -right-6 sm:right-8 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500 flex items-center justify-center shadow-md">
                   <Shield size={24} className="text-white" />
                 </div>
                 <div>
@@ -510,16 +472,14 @@ function Admissions() {
 
           {/* Content Side */}
           <div className="animate-on-scroll animate-delay-2">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-500 text-white text-sm font-medium mb-4 shadow-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-500 text-white text-sm font-medium mb-4">
               <GraduationCap size={14} />
               Now Enrolling
             </span>
 
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4 leading-tight">
               Admissions Open for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 via-gold-500 to-accent-500">
-                2026-27
-              </span>
+              <span className="text-accent-500">2026-27</span>
             </h2>
 
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -530,12 +490,12 @@ function Admissions() {
             <div className="space-y-4 mb-8">
               {highlights.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className={`w-6 h-6 rounded-full ${item.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                    <svg className={`w-3.5 h-3.5 ${item.color}`} fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-gray-600">{item.text}</p>
+                  <p className="text-gray-600">{item}</p>
                 </div>
               ))}
             </div>
@@ -545,7 +505,7 @@ function Admissions() {
               <a
                 href="tel:+919310953788"
                 id="cta-enquire-now"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-accent-500 via-accent-400 to-accent-600 text-white font-semibold rounded-full shadow-lg shadow-accent-500/25 hover:shadow-xl hover:shadow-accent-500/30 transition-all duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-accent-500 text-white font-semibold rounded-full shadow-lg hover:bg-accent-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Phone size={18} />
                 Enquire Now
@@ -569,7 +529,7 @@ function Admissions() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   RECENT HIGHLIGHTS / NEWS — Colorful cards
+   RECENT HIGHLIGHTS / NEWS — Clean cards with solid badges
    ═══════════════════════════════════════════════════════════ */
 function RecentHighlights() {
   const events = [
@@ -578,43 +538,35 @@ function RecentHighlights() {
       date: 'Nov 2024',
       title: 'XXIV MMICT Cricket Tournament 2024',
       description: 'Our annual inter-school cricket tournament witnessed participation from 24 leading schools across NCR, showcasing sportsmanship and talent.',
-      badgeColor: 'bg-emerald-500 text-white',
-      accentColor: 'from-emerald-500 to-emerald-600',
+      badgeBg: 'bg-emerald-500',
     },
     {
       image: '/images/investiture-ceremony.png',
       date: 'Jul 2023',
       title: 'Investiture Ceremony 2023',
       description: 'A proud moment as our student council was sworn in with a solemn ceremony, instilling leadership values and responsibility.',
-      badgeColor: 'bg-sky-500 text-white',
-      accentColor: 'from-sky-500 to-blue-600',
+      badgeBg: 'bg-sky-500',
     },
     {
       image: '/images/scholarship-test.png',
       date: 'Mar 2023',
       title: 'MMPS Scholarship Test 2023',
       description: 'Recognizing academic brilliance through our annual scholarship examination, encouraging meritorious students with financial support.',
-      badgeColor: 'bg-violet-500 text-white',
-      accentColor: 'from-violet-500 to-purple-600',
+      badgeBg: 'bg-violet-500',
     },
   ]
 
   return (
-    <section id="updates" className="py-20 sm:py-28 bg-vibrant-gradient relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 w-96 h-96 blob-green rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="updates" className="py-20 sm:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-accent-500 text-sm font-medium mb-4 shadow-sm border border-accent-100">
-            <Trophy size={14} className="text-gold-500" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-50 text-gold-600 text-sm font-medium mb-4">
+            <Trophy size={14} />
             Highlights
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4">
-            Recent{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-sky-500 to-violet-500">
-              Highlights
-            </span>
+            Recent <span className="text-primary-600">Highlights</span>
           </h2>
           <div className="section-divider mx-auto mb-6" />
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -622,16 +574,13 @@ function RecentHighlights() {
           </p>
         </div>
 
-        {/* Event Cards — each with unique accent color */}
+        {/* Event Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {events.map((event, i) => (
             <div
               key={i}
-              className={`animate-on-scroll animate-delay-${i + 1} group bg-white rounded-2xl overflow-hidden card-hover border border-gray-100`}
+              className={`animate-on-scroll animate-delay-${i + 1} group bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 shadow-sm`}
             >
-              {/* Colored top accent */}
-              <div className={`h-1 bg-gradient-to-r ${event.accentColor}`} />
-
               <div className="relative overflow-hidden">
                 <img
                   src={event.image}
@@ -639,8 +588,8 @@ function RecentHighlights() {
                   className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                {/* Colored Date Badge */}
-                <div className={`absolute top-4 left-4 px-3 py-1.5 ${event.badgeColor} rounded-lg text-sm font-semibold shadow-lg`}>
+                {/* Solid Date Badge */}
+                <div className={`absolute top-4 left-4 px-3 py-1.5 ${event.badgeBg} text-white rounded-lg text-sm font-semibold shadow-lg`}>
                   <div className="flex items-center gap-1.5">
                     <Calendar size={13} />
                     {event.date}
@@ -672,7 +621,7 @@ function RecentHighlights() {
           <a
             href="#"
             id="view-all-updates"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 font-medium rounded-full hover:bg-primary-50 transition-colors shadow-sm border border-primary-100"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors shadow-md"
           >
             View All Updates
             <ExternalLink size={16} />
@@ -684,7 +633,7 @@ function RecentHighlights() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   VIRTUAL CAMPUS TOUR — Rich overlay
+   VIRTUAL CAMPUS TOUR
    ═══════════════════════════════════════════════════════════ */
 function CampusTour() {
   return (
@@ -693,21 +642,18 @@ function CampusTour() {
       className="relative py-28 sm:py-36 bg-fixed bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/campus-aerial.png)' }}
     >
-      {/* Rich multi-color overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/92 via-primary-800/80 to-accent-900/85" />
+      {/* Solid dark overlay */}
+      <div className="absolute inset-0 bg-primary-900/90" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-on-scroll">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/20 text-gold-300 text-sm font-medium mb-6 backdrop-blur-sm border border-gold-400/20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-gold-300 text-sm font-medium mb-6 border border-white/10">
             <Building2 size={14} />
             Virtual Tour
           </div>
 
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            Explore Our{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-emerald-300 to-sky-300">
-              Campus
-            </span>
+            Explore Our <span className="text-gold-400">Campus</span>
           </h2>
 
           <p className="text-blue-100/80 text-lg sm:text-xl mb-10 leading-relaxed">
@@ -720,7 +666,7 @@ function CampusTour() {
             id="start-virtual-tour"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-500 to-gold-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-full bg-accent-500 flex items-center justify-center group-hover:scale-110 transition-transform">
               <Play size={18} className="text-white ml-0.5" />
             </div>
             Start Virtual Tour
@@ -732,7 +678,7 @@ function CampusTour() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   TESTIMONIALS — Colorful background
+   TESTIMONIALS — Clean design
    ═══════════════════════════════════════════════════════════ */
 function Testimonials() {
   const [active, setActive] = useState(0)
@@ -741,19 +687,19 @@ function Testimonials() {
       quote: "MMPS has been a second home for our children. The teachers are incredibly dedicated and go above and beyond to ensure every child's holistic development. We've seen remarkable growth in our son's confidence and academic performance.",
       name: 'Mrs. Priya Sharma',
       role: 'Parent of Class VIII Student',
-      color: 'from-primary-600 to-sky-600',
+      accentColor: 'bg-primary-600',
     },
     {
       quote: "The school strikes a perfect balance between academics and extracurricular activities. My daughter loves the art and sports programs. The safe, nurturing environment gives us complete peace of mind as parents.",
       name: 'Mr. Rajesh Gupta',
       role: 'Parent of Class V Student',
-      color: 'from-accent-500 to-gold-500',
+      accentColor: 'bg-accent-500',
     },
     {
       quote: "We chose MMPS for its values-driven education, and we haven't been disappointed. The discipline, the warmth of the staff, and the modern facilities make it one of the finest schools in Gurugram.",
       name: 'Mrs. Anita Verma',
       role: 'Parent of Class III Student',
-      color: 'from-emerald-500 to-sky-500',
+      accentColor: 'bg-emerald-500',
     },
   ]
 
@@ -765,33 +711,27 @@ function Testimonials() {
   }, [testimonials.length])
 
   return (
-    <section className="py-20 sm:py-28 bg-cool-gradient relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-96 h-96 blob-yellow rounded-full" />
-      <div className="absolute top-0 left-0 w-64 h-64 blob-violet rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-on-scroll">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-accent-500 text-sm font-medium mb-4 shadow-sm border border-accent-100">
-            <Quote size={14} className="text-gold-500" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
+            <Quote size={14} />
             Testimonials
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4">
-            What Parents{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 via-gold-500 to-emerald-500">
-              Say About Us
-            </span>
+            What Parents <span className="text-accent-500">Say About Us</span>
           </h2>
           <div className="section-divider mx-auto" />
         </div>
 
         {/* Testimonial Slider */}
         <div className="max-w-3xl mx-auto animate-on-scroll">
-          <div className="relative bg-white rounded-3xl shadow-xl shadow-black/5 border border-gray-100 p-8 sm:p-12 overflow-hidden">
-            {/* Colored top accent */}
-            <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${testimonials[active].color} transition-all duration-500`} />
+          <div className="relative bg-white rounded-3xl shadow-lg border border-gray-100 p-8 sm:p-12 overflow-hidden">
+            {/* Solid colored top accent */}
+            <div className={`absolute top-0 left-0 right-0 h-1.5 ${testimonials[active].accentColor} transition-all duration-500`} />
 
-            {/* Large quote icon */}
-            <div className={`absolute -top-5 left-8 sm:left-12 w-10 h-10 rounded-xl bg-gradient-to-br ${testimonials[active].color} flex items-center justify-center shadow-lg transition-all duration-500`}>
+            {/* Quote icon */}
+            <div className={`absolute -top-5 left-8 sm:left-12 w-10 h-10 rounded-xl ${testimonials[active].accentColor} flex items-center justify-center shadow-lg transition-all duration-500`}>
               <Quote size={18} className="text-white" />
             </div>
 
@@ -801,7 +741,7 @@ function Testimonials() {
               </p>
 
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonials[active].color} flex items-center justify-center text-white font-heading font-bold text-lg transition-all duration-500`}>
+                <div className={`w-12 h-12 rounded-full ${testimonials[active].accentColor} flex items-center justify-center text-white font-heading font-bold text-lg transition-all duration-500`}>
                   {testimonials[active].name.charAt(0)}
                 </div>
                 <div>
@@ -822,7 +762,7 @@ function Testimonials() {
                     onClick={() => setActive(i)}
                     className={`h-2.5 rounded-full transition-all duration-300 ${
                       i === active
-                        ? `bg-gradient-to-r ${t.color} w-8`
+                        ? `${t.accentColor} w-8`
                         : 'bg-gray-200 hover:bg-gray-300 w-2.5'
                     }`}
                     aria-label={`Go to testimonial ${i + 1}`}
@@ -855,7 +795,7 @@ function Testimonials() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   FOOTER — Rich colorful dark footer
+   FOOTER
    ═══════════════════════════════════════════════════════════ */
 function Footer() {
   const quickLinks = [
@@ -867,13 +807,11 @@ function Footer() {
   ]
 
   return (
-    <footer id="contact" className="bg-gradient-to-b from-primary-900 via-gray-900 to-gray-950 text-gray-300 relative overflow-hidden">
-      {/* Decorative colored accents */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-500 via-gold-500 via-emerald-500 to-sky-500" />
-      <div className="absolute top-20 right-0 w-64 h-64 blob-red rounded-full opacity-30" />
-      <div className="absolute bottom-10 left-0 w-48 h-48 blob-blue rounded-full opacity-30" />
+    <footer id="contact" className="bg-primary-900 text-gray-300">
+      {/* Solid accent top bar */}
+      <div className="h-1 bg-accent-500" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
           {/* Column 1: Brand */}
           <div>
@@ -893,13 +831,13 @@ function Footer() {
               nurturing talent, and inspiring excellence since 1992.
             </p>
             <div className="flex gap-3">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-xl bg-gray-800/60 hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1">
+              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-xl bg-white/5 hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
                 <Facebook size={18} />
               </a>
-              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-xl bg-gray-800/60 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1">
+              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-xl bg-white/5 hover:bg-pink-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="#" aria-label="YouTube" className="w-10 h-10 rounded-xl bg-gray-800/60 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1">
+              <a href="#" aria-label="YouTube" className="w-10 h-10 rounded-xl bg-white/5 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
                 <Youtube size={18} />
               </a>
             </div>
@@ -966,7 +904,7 @@ function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="border-t border-gray-800/50">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             © 2025 M M Public School, Gurugram. All Rights Reserved.
