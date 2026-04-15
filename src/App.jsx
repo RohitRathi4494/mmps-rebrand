@@ -35,11 +35,10 @@ function Header() {
   return (
     <header
       id="main-header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? 'bg-white shadow-lg shadow-black/5'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       {/* Solid accent bar */}
       <div className="h-1 bg-accent-500" />
@@ -51,19 +50,16 @@ function Header() {
             <img
               src="/images/logo.jpg"
               alt="M M Public School Logo"
-              className={`w-12 h-12 rounded-full object-cover border-2 transition-all duration-300 ${
-                isScrolled ? 'border-accent-500' : 'border-white'
-              } group-hover:scale-105`}
+              className={`w-12 h-12 rounded-full object-cover border-2 transition-all duration-300 ${isScrolled ? 'border-accent-500' : 'border-white'
+                } group-hover:scale-105`}
             />
             <div>
-              <h1 className={`font-heading font-bold text-lg leading-tight transition-colors duration-300 ${
-                isScrolled ? 'text-primary-600' : 'text-white'
-              }`}>
+              <h1 className={`font-heading font-bold text-lg leading-tight transition-colors duration-300 ${isScrolled ? 'text-primary-600' : 'text-white'
+                }`}>
                 M M Public School
               </h1>
-              <p className={`text-[11px] font-medium tracking-wider uppercase transition-colors duration-300 ${
-                isScrolled ? 'text-accent-500' : 'text-gold-400'
-              }`}>
+              <p className={`text-[11px] font-medium tracking-wider uppercase transition-colors duration-300 ${isScrolled ? 'text-accent-500' : 'text-gold-400'
+                }`}>
                 CBSE Affiliated · Est. 1992
               </p>
             </div>
@@ -75,11 +71,10 @@ function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 link-underline ${
-                  isScrolled
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 link-underline ${isScrolled
                     ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -96,9 +91,8 @@ function Header() {
           <button
             id="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-            }`}
+            className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+              }`}
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -334,7 +328,7 @@ function LeadershipMessages() {
   const leaders = [
     {
       image: '/images/chairman.png',
-      name: 'Sh. Maru Mal Ji',
+      name: 'Sh. Devesh Gupta',
       title: 'Chairman',
       message: "Education is the most powerful tool to transform lives. At M M Public School, we are committed to building a generation of confident, compassionate, and responsible citizens who will lead India into a brighter future.",
       accentColor: 'border-t-primary-600',
@@ -343,7 +337,7 @@ function LeadershipMessages() {
     },
     {
       image: '/images/director.png',
-      name: 'Sh. Rajendra Prasad',
+      name: 'Sh. Manoj Gupta',
       title: 'Director',
       message: "Our vision goes beyond textbooks. We strive to create an environment where every child discovers their unique potential, develops critical thinking, and embraces values that last a lifetime.",
       accentColor: 'border-t-accent-500',
@@ -352,7 +346,7 @@ function LeadershipMessages() {
     },
     {
       image: '/images/principal.png',
-      name: 'Mrs. Sunita Sharma',
+      name: 'Mrs. Jyoti Sharma',
       title: 'Principal',
       message: "At MMPS, every day is an opportunity to inspire. Our dedicated team ensures that each student receives personalized attention, a nurturing atmosphere, and the tools to excel both academically and personally.",
       accentColor: 'border-t-gold-500',
@@ -754,11 +748,10 @@ function Testimonials() {
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
-                      i === active
+                    className={`h-2.5 rounded-full transition-all duration-300 ${i === active
                         ? `${t.accentColor} w-8`
                         : 'bg-gray-200 hover:bg-gray-300 w-2.5'
-                    }`}
+                      }`}
                     aria-label={`Go to testimonial ${i + 1}`}
                   />
                 ))}
