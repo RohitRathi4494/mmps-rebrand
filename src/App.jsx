@@ -148,12 +148,6 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* CBSE Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold-500/20 backdrop-blur-sm text-gold-300 text-sm font-medium mb-8 animate-fade-in border border-gold-400/30">
-          <Award size={16} className="text-gold-400" />
-          <span>CBSE Affiliated · Sector 4, Gurugram</span>
-        </div>
-
         {/* Main Headline */}
         <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           Nurturing{' '}
