@@ -253,24 +253,21 @@ function TextStat({ icon: Icon, text, label, delay, iconColor }) {
 function WhyMMPS() {
   const features = [
     {
-      icon: Heart,
+      image: '/images/holistic.png',
       title: 'Holistic Development',
       description: 'We nurture academic excellence alongside life skills, creativity, and emotional intelligence for well-rounded growth.',
-      iconBg: 'bg-accent-500',
       accentColor: 'bg-accent-500',
     },
     {
-      icon: Building2,
+      image: '/images/infrastructure.png',
       title: 'Modern Infrastructure',
       description: 'Smart classrooms, state-of-the-art labs, expansive sports facilities, and a lush 5-acre green campus designed for learning.',
-      iconBg: 'bg-sky-500',
       accentColor: 'bg-sky-500',
     },
     {
-      icon: Star,
+      image: '/images/faculty.png',
       title: 'Experienced Faculty',
       description: 'Our dedicated team of qualified educators brings passion, expertise, and individual attention to every student\'s journey.',
-      iconBg: 'bg-gold-500',
       accentColor: 'bg-gold-500',
     },
   ]
@@ -304,8 +301,12 @@ function WhyMMPS() {
               {/* Solid top accent strip */}
               <div className={`absolute top-0 left-0 right-0 h-1 ${feature.accentColor}`} />
 
-              <div className={`w-14 h-14 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon size={26} className="text-white" />
+              <div className="relative w-full h-48 mb-6 overflow-hidden rounded-xl shadow-md group-hover:shadow-lg transition-all duration-300">
+                <img 
+                  src={feature.image} 
+                  alt={feature.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
               <h3 className="font-heading font-semibold text-xl text-gray-900 mb-3">
                 {feature.title}
