@@ -1,22 +1,15 @@
-const REPO_OWNER = 'RohitRathi4494';
-const REPO_NAME = 'mmps-rebrand';
-const BRANCH = 'main';
-
-const getToken = () => {
-  try {
-    const session = JSON.parse(localStorage.getItem('mmps_github_session'));
-    return session?.token || '';
-  } catch {
-    return '';
-  }
-};
-
 const getHeaders = () => {
-  const token = getToken();
-  if (!token) throw new Error('Not authenticated with GitHub.');
+  const sessionData = localStorage.getItem('mmps_admin_session');
+  let token = '';
+  if (sessionData) {
+    try {
+      token = JSON.parse(sessionData).token;
+    } catch (e) {}
+  }
+  
+  if (!token) throw new Error('Not authenticated.');
   return {
     'Authorization': `Bearer ${token}`,
-    'Accept': 'application/vnd.github.v3+json',
     'Content-Type': 'application/json'
   };
 };
@@ -43,16 +36,19 @@ export const fromBase64 = (b64) => {
  */
 export const getGitHubFile = async (path) => {
   try {
-    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}?ref=${BRANCH}`, {
-      headers: getHeaders()
+    const res = await fetch(`/api/github`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ action: 'GET', path })
     });
 
     if (res.status === 404) {
-      return null; // File doesn't exist yet
+      return null;
     }
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch ${path}: ${res.statusText}`);
+      const errorData = await res.json();
+      throw new Error(errorData.message || `Failed to fetch ${path}`);
     }
 
     const data = await res.json();
@@ -77,29 +73,27 @@ export const getGitHubFile = async (path) => {
 export const saveGitHubFile = async (path, contentObj, message, sha = null) => {
   try {
     const contentStr = JSON.stringify(contentObj, null, 2);
+    
     const body = {
-      message: message,
+      action: 'PUT',
+      path,
+      message,
       content: toBase64(contentStr),
-      branch: BRANCH
+      sha
     };
 
-    if (sha) {
-      body.sha = sha;
-    }
-
-    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
-      method: 'PUT',
+    const res = await fetch(`/api/github`, {
+      method: 'POST',
       headers: getHeaders(),
       body: JSON.stringify(body)
     });
 
     if (!res.ok) {
       const errorData = await res.json();
-      throw new Error(`Failed to save ${path}: ${errorData.message}`);
+      throw new Error(errorData.message || `Failed to save ${path}`);
     }
 
-    const data = await res.json();
-    return data;
+    return await res.json();
   } catch (err) {
     console.error('saveGitHubFile error:', err);
     throw err;

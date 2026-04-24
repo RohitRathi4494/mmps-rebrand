@@ -1,69 +1,60 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
+const SESSION_KEY = 'mmps_admin_session';
 
 export function AuthProvider({ children }) {
-  // Store the user profile (usually their GitHub handle) and their token
-  const [session, setSession] = useState(() => {
-    try { 
-      return JSON.parse(localStorage.getItem('mmps_github_session')); 
-    } catch { 
-      return null; 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    try {
+      const sessionData = localStorage.getItem(SESSION_KEY);
+      if (sessionData) {
+        setUser(JSON.parse(sessionData));
+      }
+    } catch (e) {
+      console.error("Session parse error", e);
+    } finally {
+      setLoading(false);
     }
-  });
+  }, []);
 
-  const [loading, setLoading] = useState(false);
-
-  const login = async (token) => {
+  const login = async (email, password) => {
     setLoading(true);
     try {
-      // Validate the token by fetching the authenticated user from GitHub
-      const response = await fetch('https://api.github.com/user', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github.v3+json',
-        }
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
       });
 
-      if (!response.ok) {
-        throw new Error('Invalid GitHub token. Ensure it has repo scopes.');
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || 'Authentication failed');
       }
 
-      const userData = await response.json();
-      
-      const newSession = {
-        token: token,
-        name: userData.name || userData.login,
-        avatar: userData.avatar_url,
-        username: userData.login,
-        role: 'admin' // If they have a valid token giving repo access, they are an admin
-      };
-
-      localStorage.setItem('mmps_github_session', JSON.stringify(newSession));
-      setSession(newSession);
-      return newSession;
-
-    } catch (err) {
-      throw err;
+      // data contains { token, user: { email, role } }
+      localStorage.setItem(SESSION_KEY, JSON.stringify(data));
+      setUser(data);
+      return data;
     } finally {
       setLoading(false);
     }
   };
 
   const logout = () => {
-    localStorage.removeItem('mmps_github_session');
-    setSession(null);
+    localStorage.removeItem(SESSION_KEY);
+    setUser(null);
   };
 
+  // Provide a safe generic proxy for the currently authenticated user
+  const _isAuthenticated = !!user?.token;
+
   return (
-    <AuthContext.Provider value={{ 
-      user: session, 
-      token: session?.token, 
-      loading, 
-      login, 
-      logout 
-    }}>
-      {children}
+    <AuthContext.Provider value={{ user, login, logout, loading, isAuthenticated: _isAuthenticated }}>
+      {!loading && children}
     </AuthContext.Provider>
   );
 }
