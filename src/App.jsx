@@ -12,6 +12,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Faculty from './pages/Faculty';
 import Academics from './pages/Academics';
+import PrePrimary from './pages/PrePrimary';
+import Primary from './pages/Primary';
+import Middle from './pages/Middle';
+import SeniorYears from './pages/SeniorYears';
 import Contact from './pages/Contact';
 import Sports from './pages/Sports';
 import HouseSystem from './pages/HouseSystem';
@@ -61,10 +65,10 @@ function App() {
 
             {/* Academics */}
             <Route path="/academics" element={<Academics />} />
-            <Route path="/academics/pre-primary" element={<PlaceholderPage title="Pre-Primary Programme" />} />
-            <Route path="/academics/primary" element={<PlaceholderPage title="Primary Programme" />} />
-            <Route path="/academics/middle" element={<PlaceholderPage title="Middle School" />} />
-            <Route path="/academics/senior" element={<PlaceholderPage title="Senior Years (XI & XII)" />} />
+            <Route path="/academics/pre-primary" element={<PrePrimary />} />
+            <Route path="/academics/primary" element={<Primary />} />
+            <Route path="/academics/middle" element={<Middle />} />
+            <Route path="/academics/senior" element={<SeniorYears />} />
             <Route path="/academics/calendar" element={<PlaceholderPage title="Academic Calendar" />} />
 
             {/* Admissions */}
