@@ -120,7 +120,7 @@ function OverviewSection() {
         {/* Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
           {pillars.map((p, i) => (
-            <div key={i} className="bg-white p-7 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+            <div key={i} className="bg-ivory p-7 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
               <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center mb-5 group-hover:bg-ivory transition-colors">
                 <p.icon className={`transition-transform duration-500 group-hover:scale-110 ${p.color}`} size={28} />
               </div>
@@ -155,8 +155,8 @@ function VisionSection() {
             </div>
             <h2 className="font-heading font-bold text-4xl text-navy mb-6 uppercase tracking-tighter relative z-10">Vision</h2>
             <div className="w-14 h-1.5 bg-accent rounded-full mb-8 relative z-10" />
-            <p className="font-heading font-bold text-2xl md:text-3xl text-navy leading-tight italic relative z-10">
-              "To produce <span className="text-primary">global citizens</span> who respect and celebrate differences and become instruments of change in the world."
+            <p className="font-heading font-medium text-xl md:text-2xl text-navy leading-relaxed italic relative z-10">
+              "To produce <span className="text-primary font-bold">global citizens</span> who respect and celebrate differences and become instruments of change in the world."
             </p>
           </div>
 
@@ -168,8 +168,8 @@ function VisionSection() {
             </div>
             <h2 className="font-heading font-bold text-4xl text-white mb-6 uppercase tracking-tighter relative z-10">Mission</h2>
             <div className="w-14 h-1.5 bg-accent rounded-full mb-8 relative z-10" />
-            <p className="font-body text-xl text-white/80 leading-relaxed relative z-10">
-              "Committed to providing students with the <span className="text-accent font-semibold text-2xl">skills and knowledge</span> to become lifelong learners, effective communicators, and socially productive citizens — prepared for life's choices and challenges in a global society."
+            <p className="font-heading font-medium text-xl md:text-2xl text-white leading-relaxed italic relative z-10">
+              "Committed to providing students with the <span className="text-accent font-bold">skills and knowledge</span> to become lifelong learners, effective communicators, and socially productive citizens — prepared for life's choices and challenges in a global society."
             </p>
           </div>
         </div>
