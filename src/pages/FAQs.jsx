@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'How can I contact the school for enquiries?',
-    a: 'You can reach us at +91 93109 53788 or email info@mmpublicschool.edu.in. You may also visit us at our campus in Sector 4, Gurugram.',
+    a: 'You can reach us at +91 93109 53788 or email info@mmps.edu.in. You may also visit us at our campus in Sector 4, Gurugram.',
   },
 ];
 
@@ -106,7 +106,7 @@ export default function FAQs() {
                 Call Us
               </a>
               <a
-                href="mailto:info@mmpublicschool.edu.in"
+                href="mailto:info@mmps.edu.in"
                 className="px-7 py-3 bg-white/10 text-white font-heading font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-colors"
               >
                 Email Us

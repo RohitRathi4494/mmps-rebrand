@@ -94,7 +94,7 @@ export default function Press() {
               For press releases, interview requests, or any media-related queries, please reach our communications team.
             </p>
             <a
-              href="mailto:info@mmpublicschool.edu.in"
+              href="mailto:info@mmps.edu.in"
               className="inline-block px-8 py-4 bg-gold text-navy font-heading font-bold rounded-full hover:bg-yellow-500 transition-colors"
             >
               Contact Media Team

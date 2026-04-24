@@ -96,11 +96,11 @@ export default function Header() {
             </a>
             <span className="text-white/30 hidden sm:inline">|</span>
             <a
-              href="mailto:info@mmpublicschool.edu.in"
+              href="mailto:info@mmps.edu.in"
               className="flex items-center gap-1.5 hover:text-gold transition-colors hidden sm:flex"
             >
               <Mail size={13} />
-              info@mmpublicschool.edu.in
+              info@mmps.edu.in
             </a>
           </div>
 

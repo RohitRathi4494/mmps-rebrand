@@ -119,8 +119,8 @@ export default function AlumniNetwork() {
                   participate in school events, and stay rooted to your MMPS family.
                 </p>
                 <div className="space-y-3">
-                  <a href="mailto:info@mmpublicschool.edu.in" className="flex items-center gap-3 text-gold hover:underline font-body text-sm">
-                    <Mail size={16} /> info@mmpublicschool.edu.in
+                  <a href="mailto:info@mmps.edu.in" className="flex items-center gap-3 text-gold hover:underline font-body text-sm">
+                    <Mail size={16} /> info@mmps.edu.in
                   </a>
                 </div>
               </div>

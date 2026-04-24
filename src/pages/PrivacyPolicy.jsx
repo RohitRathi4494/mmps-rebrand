@@ -36,7 +36,7 @@ We do not sell, trade, or rent your personal data to third parties.`,
 • Request corrections to inaccurate data.
 • Request deletion of your personal data, subject to our legal obligations.
 
-To exercise these rights, please contact us at info@mmpublicschool.edu.in.`,
+To exercise these rights, please contact us at info@mmps.edu.in.`,
   },
   {
     icon: FileText,
@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
             <div className="font-body text-sm space-y-1 text-white/80">
               <p><strong className="text-gold">M M Public School</strong></p>
               <p>Sector 4, Gurugram, Haryana – 122001</p>
-              <p>Email: <a href="mailto:info@mmpublicschool.edu.in" className="text-gold hover:underline">info@mmpublicschool.edu.in</a></p>
+              <p>Email: <a href="mailto:info@mmps.edu.in" className="text-gold hover:underline">info@mmps.edu.in</a></p>
               <p>Phone: <a href="tel:+919310953788" className="text-gold hover:underline">+91 93109 53788</a></p>
             </div>
           </div>

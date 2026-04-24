@@ -60,8 +60,8 @@ export default function OnlineRegistration() {
                 <a href="tel:+919310953788" className="flex items-center gap-2 text-gold text-sm mt-2 hover:underline">
                   <Phone size={14} /> +91 93109 53788
                 </a>
-                <a href="mailto:info@mmpublicschool.edu.in" className="flex items-center gap-2 text-gold text-sm mt-1 hover:underline">
-                  <Mail size={14} /> info@mmpublicschool.edu.in
+                <a href="mailto:info@mmps.edu.in" className="flex items-center gap-2 text-gold text-sm mt-1 hover:underline">
+                  <Mail size={14} /> info@mmps.edu.in
                 </a>
               </div>
             </div>
