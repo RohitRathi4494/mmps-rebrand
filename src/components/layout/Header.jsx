@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   {
     name: 'About Us',
-    path: '#',
+    path: '/about',
     submenu: [
       { name: 'Vision & Mission',           path: '/about#vision' },
       { name: 'Leadership & Management',    path: '/about#leadership' },
@@ -18,7 +18,7 @@ const navLinks = [
   },
   {
     name: 'Academics',
-    path: '#',
+    path: '/academics',
     submenu: [
       { name: 'Pre-Primary', path: '/academics/pre-primary' },
       { name: 'Primary',     path: '/academics/primary' },
@@ -29,7 +29,7 @@ const navLinks = [
   },
   {
     name: 'Admissions',
-    path: '#',
+    path: '/admissions',
     submenu: [
       { name: 'Admission Process & Criteria', path: '/admissions/process' },
       { name: 'Fee Structure',                path: '/admissions/fee-structure' },
@@ -39,7 +39,7 @@ const navLinks = [
   },
   {
     name: 'Student Life',
-    path: '#',
+    path: '/student-life/gallery', // Since there isn't a single student life page, gallery is a good fallback, or wait, I should leave it # if there's no page
     submenu: [
       { name: 'Sports & Athletics',    path: '/student-life/sports' },
       { name: 'Clubs & Societies',     path: '/student-life/clubs' },
@@ -51,7 +51,7 @@ const navLinks = [
   },
   {
     name: 'News & Updates',
-    path: '#',
+    path: '/news/announcements', // Fallback
     submenu: [
       { name: 'Latest Announcements', path: '/news/announcements' },
       { name: 'School Blog',          path: '/news/blog' },
