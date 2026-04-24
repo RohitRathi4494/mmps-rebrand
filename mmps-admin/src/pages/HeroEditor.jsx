@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../context/ToastContext';
-import { getHero, updateHero } from '../services/mockData';
+import { getHero, updateHero } from '../services/contentService';
 import { Save, Plus, Trash2 } from 'lucide-react';
 import ImageUpload from '../components/ImageUpload';
 
 export default function HeroEditor() {
   const [form, setForm] = useState(null);
+  const [sha, setSha] = useState(null);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
 
-  useEffect(() => { getHero().then(setForm); }, []);
+  useEffect(() => { 
+    getHero().then(res => {
+      setForm(res.data);
+      setSha(res.sha);
+    }); 
+  }, []);
 
   const setField = (k,v) => setForm(p => ({...p,[k]:v}));
   const setStat = (i,k,v) => { const stats=[...form.stats]; stats[i]={...stats[i],[k]:v}; setField('stats',stats); };
@@ -18,8 +24,14 @@ export default function HeroEditor() {
 
   const save = async () => {
     setLoading(true);
-    try { await updateHero(form); toast('Hero section saved!', 'success'); }
-    catch { toast('Error saving', 'error'); }
+    try { 
+      const res = await updateHero(form, sha); 
+      setSha(res.content.sha); // Update SHA with the newly generated one
+      toast('Hero section saved to GitHub!', 'success'); 
+    }
+    catch (err) { 
+      toast(`Error saving: ${err.message}`, 'error'); 
+    }
     finally { setLoading(false); }
   };
 

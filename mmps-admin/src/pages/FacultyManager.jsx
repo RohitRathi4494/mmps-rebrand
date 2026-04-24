@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getFaculty, createFaculty, updateFaculty, deleteFaculty } from '../services/mockData';
+import { getFaculty, createFaculty, updateFaculty, deleteFaculty } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, User } from 'lucide-react';
 
 const EMPTY = { name: '', designation: '', department: '', qualification: '', email: '', phone: '', bio: '', order: 1, active: true, photo: null };

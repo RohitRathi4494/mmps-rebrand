@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getAchievements, createAchievement, updateAchievement, deleteAchievement } from '../services/mockData';
+import { getAchievements, createAchievement, updateAchievement, deleteAchievement } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle } from 'lucide-react';
 import { format } from 'date-fns';
 

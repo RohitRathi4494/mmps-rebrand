@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../context/ToastContext';
-import { getContact, updateContact } from '../services/mockData';
+import { getContact, updateContact } from '../services/contentService';
 import { MapPin, Phone, Mail, Clock, Link as LinkIcon, Plus, Trash2, Save, Share2 } from 'lucide-react';
 
 export default function ContactEditor() {
   const [form, setForm] = useState(null);
+  const [sha, setSha] = useState(null);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
 
-  useEffect(() => { getContact().then(setForm); }, []);
+  useEffect(() => { 
+    getContact().then(res => {
+      setForm(res.data);
+      setSha(res.sha);
+    }); 
+  }, []);
 
   const setField = (k, v) => setForm(p => ({...p, [k]: v}));
 
@@ -22,8 +28,14 @@ export default function ContactEditor() {
 
   const save = async () => {
     setLoading(true);
-    try { await updateContact(form); toast('Contact info saved!', 'success'); }
-    catch { toast('Error saving', 'error'); }
+    try { 
+      const res = await updateContact(form, sha); 
+      setSha(res.content.sha); // Update SHA with the newly generated one
+      toast('Contact info saved to GitHub!', 'success'); 
+    }
+    catch (err) { 
+      toast(`Error saving: ${err.message}`, 'error'); 
+    }
     finally { setLoading(false); }
   };
 

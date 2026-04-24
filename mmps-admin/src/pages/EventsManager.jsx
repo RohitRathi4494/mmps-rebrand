@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getEvents, createEvent, updateEvent, deleteEvent } from '../services/mockData';
+import { getEvents, createEvent, updateEvent, deleteEvent } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, Calendar } from 'lucide-react';
 import { format } from 'date-fns';
 

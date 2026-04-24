@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import { useToast } from '../context/ToastContext';
-import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../services/mockData';
+import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle } from 'lucide-react';
 import { format } from 'date-fns';
 

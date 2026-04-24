@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getBlogs, createBlog, updateBlog, deleteBlog } from '../services/mockData';
+import { getBlogs, createBlog, updateBlog, deleteBlog } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, Eye } from 'lucide-react';
 import { format } from 'date-fns';
 

@@ -4,7 +4,7 @@ import { useToast } from '../context/ToastContext';
 import { GraduationCap, Lock, Mail, Eye, EyeOff, Loader2 } from 'lucide-react';
 
 export default function Login() {
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [token, setToken] = useState('');
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState('');
   const { login, loading } = useAuth();
@@ -12,10 +12,11 @@ export default function Login() {
 
   const handle = async (e) => {
     e.preventDefault();
+    if (!token.trim()) return;
     setError('');
     try {
-      await login(form.email, form.password);
-      toast('Welcome back! 👋', 'success');
+      await login(token.trim());
+      toast('GitHub Authentication Successful! 👋', 'success');
     } catch (err) {
       setError(err.message);
     }
@@ -74,33 +75,13 @@ export default function Login() {
 
           <form onSubmit={handle} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             <div className="form-group">
-              <label style={{ color: 'rgba(255,255,255,.6)', fontSize: '.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>Email Address</label>
-              <div style={{ position: 'relative' }}>
-                <Mail size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,.4)', pointerEvents: 'none' }} />
-                <input
-                  type="email" required value={form.email}
-                  onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
-                  placeholder="admin@mmps.edu.in"
-                  style={{
-                    width: '100%', padding: '12px 14px 12px 40px',
-                    background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.15)',
-                    borderRadius: 10, color: 'white', fontSize: '.9rem', outline: 'none',
-                    fontFamily: 'inherit',
-                  }}
-                  onFocus={e => e.target.style.borderColor = '#f5a623'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,.15)'}
-                />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label style={{ color: 'rgba(255,255,255,.6)', fontSize: '.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>Password</label>
+              <label style={{ color: 'rgba(255,255,255,.6)', fontSize: '.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>GitHub Personal Access Token</label>
               <div style={{ position: 'relative' }}>
                 <Lock size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,.4)', pointerEvents: 'none' }} />
                 <input
-                  type={showPw ? 'text' : 'password'} required value={form.password}
-                  onChange={e => setForm(p => ({ ...p, password: e.target.value }))}
-                  placeholder="••••••••"
+                  type={showPw ? 'text' : 'password'} required value={token}
+                  onChange={e => setToken(e.target.value)}
+                  placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
                   style={{
                     width: '100%', padding: '12px 44px 12px 40px',
                     background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.15)',
@@ -125,14 +106,15 @@ export default function Login() {
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
               opacity: loading ? .7 : 1, transition: 'all .2s', fontFamily: 'inherit',
             }}>
-              {loading ? <><Loader2 size={18} style={{ animation: 'spin 1s linear infinite' }} />Signing in...</> : 'Sign In'}
+              {loading ? <><Loader2 size={18} style={{ animation: 'spin 1s linear infinite' }} />Authenticating...</> : 'Authenticate ->'}
             </button>
           </form>
 
           <div style={{ marginTop: 24, padding: '14px 16px', background: 'rgba(255,255,255,.05)', borderRadius: 10, border: '1px solid rgba(255,255,255,.08)' }}>
-            <p style={{ color: 'rgba(255,255,255,.5)', fontSize: '.78rem', marginBottom: 6, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Demo Credentials</p>
-            <p style={{ color: 'rgba(255,255,255,.7)', fontSize: '.82rem' }}>Super Admin: <span style={{ color: '#f5a623' }}>admin@mmps.edu.in</span> · mmps@admin123</p>
-            <p style={{ color: 'rgba(255,255,255,.7)', fontSize: '.82rem', marginTop: 4 }}>Editor: <span style={{ color: '#f5a623' }}>editor@mmps.edu.in</span> · editor@123</p>
+            <p style={{ color: 'rgba(255,255,255,.5)', fontSize: '.78rem', marginBottom: 6, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em' }}>Connection Notice</p>
+            <p style={{ color: 'rgba(255,255,255,.7)', fontSize: '.82rem', lineHeight: 1.5 }}>
+              This dashboard connects directly to your GitHub repository to update website content. Enter the same classic access token you generated for the old Sveltia CMS.
+            </p>
           </div>
         </div>
 

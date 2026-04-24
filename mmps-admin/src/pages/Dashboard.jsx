@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStats } from '../services/mockData';
+import { getStats } from '../services/contentService';
 import { Megaphone, BookOpen, Users, Calendar, Trophy, Star, Image, TrendingUp, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';

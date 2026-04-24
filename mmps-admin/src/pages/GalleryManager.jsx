@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getGallery, addGalleryItem, deleteGalleryItem } from '../services/mockData';
+import { getGallery, addGalleryItem, deleteGalleryItem } from '../services/contentService';
 import { Plus, Trash2, Image, AlertTriangle, Upload } from 'lucide-react';
 
 const CATEGORIES = ['Events', 'Sports', 'Academics', 'Cultural', 'Infrastructure', 'Students'];

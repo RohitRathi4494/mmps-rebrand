@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from '../services/mockData';
+import { getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, Star } from 'lucide-react';
 
 const EMPTY = { name: '', role: 'Parent', content: '', rating: 5, photo: null, active: true };
