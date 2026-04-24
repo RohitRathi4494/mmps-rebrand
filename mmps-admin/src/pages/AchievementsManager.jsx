@@ -10,6 +10,8 @@ import { format } from 'date-fns';
 const EMPTY = { title: '', description: '', date: new Date().toISOString().split('T')[0], category: 'Academic', studentName: '', grade: '', image: null, active: true };
 const CATS = ['Academic', 'Sports', 'Cultural', 'Other'];
 
+const F = ({label, children}) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 export default function AchievementsManager() {
   const [data, setData] = useState([]);
   const [modal, setModal] = useState(null);
@@ -63,7 +65,7 @@ export default function AchievementsManager() {
     { key: 'active', label: 'Status', render: r => <span className={`badge ${r.active ? 'badge-success' : 'badge-neutral'}`}>{r.active ? 'Active' : 'Hidden'}</span> },
   ];
 
-  const F = ({label, children}) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 
   return (
     <div>

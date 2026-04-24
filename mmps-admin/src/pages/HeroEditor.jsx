@@ -4,6 +4,14 @@ import { getHero, updateHero, uploadMedia } from '../services/contentService';
 import { Save, Plus, Trash2 } from 'lucide-react';
 import ImageUpload from '../components/ImageUpload';
 
+const F = ({ label, hint, children }) => (
+  <div className="form-group" style={{ marginBottom: 16 }}>
+    <label className="form-label">{label}</label>
+    {children}
+    {hint && <p style={{ fontSize: '.75rem', color: 'var(--text-light)', marginTop: 4 }}>{hint}</p>}
+  </div>
+);
+
 export default function HeroEditor() {
   const [form, setForm] = useState(null);
   const [sha, setSha] = useState(null);
@@ -44,13 +52,7 @@ export default function HeroEditor() {
 
   if (!form) return <div style={{ padding:40, textAlign:'center', color:'var(--text-muted)' }}>Loading…</div>;
 
-  const F = ({label, hint, children}) => (
-    <div className="form-group" style={{ marginBottom:16 }}>
-      <label className="form-label">{label}</label>
-      {children}
-      {hint && <p style={{ fontSize:'.75rem', color:'var(--text-light)', marginTop:4 }}>{hint}</p>}
-    </div>
-  );
+
 
   return (
     <div>

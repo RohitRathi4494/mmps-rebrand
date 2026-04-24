@@ -10,6 +10,8 @@ import { format } from 'date-fns';
 const EMPTY = { title: '', description: '', date: new Date().toISOString().split('T')[0], endDate: '', location: '', category: 'Academic', image: null, active: true };
 const CATS = ['Academic', 'Cultural', 'Sports', 'Examination', 'Holiday', 'Other'];
 
+const F = ({label, children}) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 export default function EventsManager() {
   const [data, setData] = useState([]);
   const [modal, setModal] = useState(null);
@@ -63,7 +65,7 @@ export default function EventsManager() {
     { key: 'active', label: 'Status', render: r => <span className={`badge ${r.active ? 'badge-success' : 'badge-neutral'}`}>{r.active ? 'Active' : 'Inactive'}</span> },
   ];
 
-  const F = ({label, children}) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 
   return (
     <div>

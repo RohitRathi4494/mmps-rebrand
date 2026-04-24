@@ -10,6 +10,8 @@ const EMPTY = { name: '', designation: '', department: '', qualification: '', em
 
 const DEPTS = ['Administration', 'Mathematics', 'Science', 'English', 'Social Studies', 'Hindi', 'Computer Science', 'Physical Education', 'Arts', 'Music'];
 
+const F = ({ label, children }) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 export default function FacultyManager() {
   const [data, setData] = useState([]);
   const [modal, setModal] = useState(null);
@@ -69,7 +71,7 @@ export default function FacultyManager() {
     { key: 'active',      label: 'Status', render: r => <span className={`badge ${r.active ? 'badge-success' : 'badge-neutral'}`}>{r.active ? 'Active' : 'Inactive'}</span> },
   ];
 
-  const F = ({ label, children }) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 
   return (
     <div>

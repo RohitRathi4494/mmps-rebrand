@@ -14,6 +14,8 @@ const EMPTY = { title: '', slug: '', excerpt: '', content: '', author: 'MMPS Adm
 
 const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
+const F = ({ label, children }) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 export default function BlogManager() {
   const [data, setData] = useState([]);
   const [modal, setModal] = useState(null);
@@ -74,7 +76,7 @@ export default function BlogManager() {
     { key: 'status', label: 'Status', render: r => <span className={`badge ${r.status === 'published' ? 'badge-success' : 'badge-warning'}`}>{r.status}</span> },
   ];
 
-  const F = ({ label, children }) => <div className="form-group"><label className="form-label">{label}</label>{children}</div>;
+
 
   return (
     <div>
