@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../context/ToastContext';
-import { getHero, updateHero } from '../services/contentService';
+import { getHero, updateHero, uploadMedia } from '../services/contentService';
 import { Save, Plus, Trash2 } from 'lucide-react';
 import ImageUpload from '../components/ImageUpload';
 
@@ -25,7 +25,14 @@ export default function HeroEditor() {
   const save = async () => {
     setLoading(true);
     try { 
-      const res = await updateHero(form, sha); 
+      let finalData = { ...form };
+      // If the background is a new base64 string, upload it
+      if (form.backgroundImage && form.backgroundImage.startsWith('data:')) {
+        // Force the name to school.webp as it's the standard background for the site
+        finalData.backgroundImage = await uploadMedia(form.backgroundImage, 'school.webp');
+      }
+
+      const res = await updateHero(finalData, sha); 
       setSha(res.content.sha); // Update SHA with the newly generated one
       toast('Hero section saved to GitHub!', 'success'); 
     }
@@ -67,7 +74,7 @@ export default function HeroEditor() {
 
           <div className="card">
             <div className="card-header"><h3>Background Image</h3></div>
-            <ImageUpload value={null} onChange={() => toast('To change the hero background, replace /public/school.webp in your repository', 'info')} label="Upload New Hero Background (Optional)" />
+            <ImageUpload value={form.backgroundImage} onChange={v => setField('backgroundImage', v)} label="Upload New Hero Background" />
             <p style={{ color:'var(--text-muted)', fontSize:'.8rem', marginTop:12 }}>Note: The hero background is a large image. Currently using /school.webp from the public folder.</p>
           </div>
         </div>

@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getBlogs, createBlog, updateBlog, deleteBlog } from '../services/contentService';
+import { getBlogs, createBlog, updateBlog, deleteBlog, uploadMedia } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, Eye } from 'lucide-react';
 import { format } from 'date-fns';
 
@@ -35,12 +35,27 @@ export default function BlogManager() {
   const handleSave = async (status) => {
     if (!form.title.trim()) { toast('Title is required', 'error'); return; }
     setLoading(true);
-    const payload = { ...form, status: status ?? form.status, slug: form.slug || slugify(form.title), tags: typeof form.tags === 'string' ? form.tags.split(',').map(t => t.trim()).filter(Boolean) : form.tags };
     try {
-      if (!selected) { await createBlog(payload); toast('Blog post created!', 'success'); }
-      else { await updateBlog(selected.id, payload); toast('Blog post updated!', 'success'); }
+      let finalData = { 
+        ...form, 
+        status: status ?? form.status, 
+        slug: form.slug || slugify(form.title), 
+        tags: typeof form.tags === 'string' ? form.tags.split(',').map(t => t.trim()).filter(Boolean) : form.tags 
+      };
+
+      // If the image is a base64 string, upload it first
+      if (form.image && form.image.startsWith('data:')) {
+        const ext = form.image.split(';')[0].split('/')[1] || 'jpg';
+        const fileName = `blog_${Date.now()}.${ext}`;
+        finalData.image = await uploadMedia(form.image, fileName);
+      }
+
+      if (!selected) { await createBlog(finalData); toast('Blog post created!', 'success'); }
+      else { await updateBlog(selected.id, finalData); toast('Blog post updated!', 'success'); }
       await load(); close();
-    } catch { toast('Error saving post', 'error'); }
+    } catch (err) { 
+      toast(`Error saving: ${err.message}`, 'error'); 
+    }
     finally { setLoading(false); }
   };
 

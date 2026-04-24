@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getEvents, createEvent, updateEvent, deleteEvent } from '../services/contentService';
+import { getEvents, createEvent, updateEvent, deleteEvent, uploadMedia } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, Calendar } from 'lucide-react';
 import { format } from 'date-fns';
 
@@ -31,10 +31,20 @@ export default function EventsManager() {
     if (!form.title.trim()) { toast('Title is required', 'error'); return; }
     setLoading(true);
     try {
-      if (!selected) { await createEvent(form); toast('Event created!', 'success'); }
-      else { await updateEvent(selected.id, form); toast('Event updated!', 'success'); }
+      let finalData = { ...form };
+      // If the image is a base64 string, upload it first
+      if (form.image && form.image.startsWith('data:')) {
+        const ext = form.image.split(';')[0].split('/')[1] || 'jpg';
+        const fileName = `event_${Date.now()}.${ext}`;
+        finalData.image = await uploadMedia(form.image, fileName);
+      }
+
+      if (!selected) { await createEvent(finalData); toast('Event created!', 'success'); }
+      else { await updateEvent(selected.id, finalData); toast('Event updated!', 'success'); }
       await load(); close();
-    } catch { toast('Error saving event', 'error'); } finally { setLoading(false); }
+    } catch (err) {
+      toast(`Error saving: ${err.message}`, 'error');
+    } finally { setLoading(false); }
   };
 
   const del = async () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getGallery, addGalleryItem, deleteGalleryItem } from '../services/contentService';
+import { getGallery, addGalleryItem, deleteGalleryItem, uploadMedia } from '../services/contentService';
 import { Plus, Trash2, Image, AlertTriangle, Upload } from 'lucide-react';
 
 const CATEGORIES = ['Events', 'Sports', 'Academics', 'Cultural', 'Infrastructure', 'Students'];
@@ -23,10 +23,26 @@ export default function GalleryManager() {
   const close = () => { setModal(null); setSelected(null); };
 
   const handleUpload = async () => {
-    if (!form.title.trim()) { toast('Title is required', 'error'); return; }
+    if (!form.title.trim() || !form.url) { toast('Title and Image are required', 'error'); return; }
     setLoading(true);
-    try { await addGalleryItem(form); toast('Image added to gallery!', 'success'); await load(); close(); setForm(EMPTY); }
-    catch { toast('Error adding image', 'error'); }
+    try {
+      let finalUrl = form.url;
+      // If the URL is a base64 string, upload it first
+      if (form.url.startsWith('data:')) {
+        const ext = form.url.split(';')[0].split('/')[1] || 'jpg';
+        const fileName = `gallery_${Date.now()}.${ext}`;
+        finalUrl = await uploadMedia(form.url, fileName);
+      }
+      
+      await addGalleryItem({ ...form, url: finalUrl }); 
+      toast('Image added to gallery!', 'success'); 
+      await load(); 
+      close(); 
+      setForm(EMPTY); 
+    }
+    catch (err) { 
+      toast(`Error adding image: ${err.message}`, 'error'); 
+    }
     finally { setLoading(false); }
   };
 

@@ -99,3 +99,41 @@ export const saveGitHubFile = async (path, contentObj, message, sha = null) => {
     throw err;
   }
 };
+
+/**
+ * Upload a media file (image) to public/media/ on GitHub
+ * @param {string} base64Data - Base64 encoded file content
+ * @param {string} fileName - Destination filename
+ */
+export const uploadMedia = async (base64Data, fileName) => {
+  try {
+    // Strip the data URL prefix if present (e.g., data:image/png;base64,)
+    const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '');
+    const path = `public/media/${fileName}`;
+    
+    const body = {
+      action: 'PUT',
+      path,
+      message: `Upload media ${fileName} via Admin Dashboard`,
+      content: cleanBase64
+    };
+
+    const res = await fetch(`/api/github`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      const errorData = await res.json();
+      throw new Error(errorData.message || `Failed to upload ${fileName}`);
+    }
+
+    const data = await res.json();
+    // Return the relative path that the website can use
+    return `/media/${fileName}`;
+  } catch (err) {
+    console.error('uploadMedia error:', err);
+    throw err;
+  }
+};

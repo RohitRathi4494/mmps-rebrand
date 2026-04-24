@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getFaculty, createFaculty, updateFaculty, deleteFaculty } from '../services/contentService';
+import { getFaculty, createFaculty, updateFaculty, deleteFaculty, uploadMedia } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle, User } from 'lucide-react';
 
 const EMPTY = { name: '', designation: '', department: '', qualification: '', email: '', phone: '', bio: '', order: 1, active: true, photo: null };
@@ -32,10 +32,20 @@ export default function FacultyManager() {
     if (!form.name.trim()) { toast('Name is required', 'error'); return; }
     setLoading(true);
     try {
-      if (!selected) { await createFaculty(form); toast('Faculty member added!', 'success'); }
-      else { await updateFaculty(selected.id, form); toast('Faculty member updated!', 'success'); }
+      let finalData = { ...form };
+      // If the photo is a base64 string, upload it first
+      if (form.photo && form.photo.startsWith('data:')) {
+        const ext = form.photo.split(';')[0].split('/')[1] || 'jpg';
+        const fileName = `faculty_${Date.now()}.${ext}`;
+        finalData.photo = await uploadMedia(form.photo, fileName);
+      }
+
+      if (!selected) { await createFaculty(finalData); toast('Faculty member added!', 'success'); }
+      else { await updateFaculty(selected.id, finalData); toast('Faculty member updated!', 'success'); }
       await load(); close();
-    } catch { toast('Error saving', 'error'); }
+    } catch (err) { 
+      toast(`Error saving: ${err.message}`, 'error'); 
+    }
     finally { setLoading(false); }
   };
 

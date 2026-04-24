@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 import Modal from '../components/Modal';
 import ImageUpload from '../components/ImageUpload';
 import { useToast } from '../context/ToastContext';
-import { getAchievements, createAchievement, updateAchievement, deleteAchievement } from '../services/contentService';
+import { getAchievements, createAchievement, updateAchievement, deleteAchievement, uploadMedia } from '../services/contentService';
 import { Plus, Pencil, Trash2, AlertTriangle } from 'lucide-react';
 import { format } from 'date-fns';
 
@@ -31,10 +31,20 @@ export default function AchievementsManager() {
     if (!form.title.trim()) { toast('Title is required', 'error'); return; }
     setLoading(true);
     try {
-      if (!selected) { await createAchievement(form); toast('Achievement added!', 'success'); }
-      else { await updateAchievement(selected.id, form); toast('Updated!', 'success'); }
+      let finalData = { ...form };
+      // If the image is a base64 string, upload it first
+      if (form.image && form.image.startsWith('data:')) {
+        const ext = form.image.split(';')[0].split('/')[1] || 'jpg';
+        const fileName = `achievement_${Date.now()}.${ext}`;
+        finalData.image = await uploadMedia(form.image, fileName);
+      }
+
+      if (!selected) { await createAchievement(finalData); toast('Achievement added!', 'success'); }
+      else { await updateAchievement(selected.id, finalData); toast('Updated!', 'success'); }
       await load(); close();
-    } catch { toast('Error saving', 'error'); } finally { setLoading(false); }
+    } catch (err) {
+      toast(`Error saving: ${err.message}`, 'error');
+    } finally { setLoading(false); }
   };
 
   const del = async () => {

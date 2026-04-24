@@ -1,4 +1,6 @@
-import { getGitHubFile, saveGitHubFile } from './githubApi';
+import { getGitHubFile, saveGitHubFile, uploadMedia } from './githubApi';
+
+export { uploadMedia };
 
 // ─── Hero ────────────────────────────────────────────────
 const HERO_PATH = 'src/content/pages/home.json';
