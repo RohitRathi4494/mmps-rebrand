@@ -2,7 +2,6 @@ import React from 'react';
 import PageHero from '../components/ui/PageHero';
 import { Lightbulb, Code2, Leaf, Users2, Brush, Globe2, Rocket } from 'lucide-react';
 
-const workshops = [
   {
     icon: Code2,
     title: 'Annual Coding Bootcamp',
@@ -10,6 +9,7 @@ const workshops = [
     tag: 'STEM',
     tagColor: 'bg-sky-100 text-sky-700',
     description: 'A 3-day intensive coding bootcamp where students from Grades VI–XII are introduced to Python, web development, and problem-solving using real-world challenges.',
+    image: '/images/coding.png',
   },
   {
     icon: Leaf,
@@ -18,6 +18,7 @@ const workshops = [
     tag: 'Environment',
     tagColor: 'bg-green-100 text-green-700',
     description: 'Students participate in plantation drives, waste segregation awareness, and sustainability audits of the campus as part of our commitment to a greener future.',
+    image: '/images/green_campus.png',
   },
   {
     icon: Brush,
@@ -26,6 +27,7 @@ const workshops = [
     tag: 'Arts & Culture',
     tagColor: 'bg-pink-100 text-pink-700',
     description: 'A collaboration with local artists, this workshop celebrates Indian folk art forms — Madhubani, Warli, and Phad — giving students a hands-on cultural experience.',
+    image: '/images/art_workshop.png',
   },
   {
     icon: Lightbulb,
@@ -34,6 +36,7 @@ const workshops = [
     tag: 'Life Skills',
     tagColor: 'bg-amber-100 text-amber-700',
     description: 'Conducted by industry mentors, this session teaches students ideation, pitching, and basic business concepts through simulations and group challenges.',
+    image: '/school.webp',
   },
   {
     icon: Globe2,
@@ -42,6 +45,7 @@ const workshops = [
     tag: 'Leadership',
     tagColor: 'bg-indigo-100 text-indigo-700',
     description: 'MMPS hosted its annual MUN conference with participation from 15 schools across NCR. Students debated global issues, honing research and public speaking skills.',
+    image: '/images/mun.png',
   },
   {
     icon: Users2,
@@ -50,6 +54,7 @@ const workshops = [
     tag: 'Wellbeing',
     tagColor: 'bg-rose-100 text-rose-700',
     description: 'School counselors and external specialists ran grade-wise sessions on emotional well-being, conflict resolution, and creating a safe, inclusive school environment.',
+    image: '/library.webp',
   },
   {
     icon: Rocket,
@@ -58,6 +63,7 @@ const workshops = [
     tag: 'STEM',
     tagColor: 'bg-sky-100 text-sky-700',
     description: 'In collaboration with a national science foundation, students built model rockets, studied our solar system, and interacted with a guest astronomer via live video.',
+    image: '/images/space_camp.png',
   },
 ];
 
@@ -81,24 +87,37 @@ export default function Workshops() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {workshops.map((w, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col"
               >
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <w.icon size={22} className="text-primary group-hover:text-white transition-colors" />
+                {/* Top Image Area */}
+                <div className="h-56 relative overflow-hidden bg-gray-100 isolate">
+                  <img 
+                    src={w.image} 
+                    alt={w.title} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+                  <div className="absolute top-5 right-5">
+                    <span className={`px-4 py-1.5 rounded-full text-xs font-heading font-bold shadow-sm backdrop-blur-md ${w.tagColor} bg-white/95`}>
+                      {w.tag}
+                    </span>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-heading font-medium ${w.tagColor}`}>
-                    {w.tag}
-                  </span>
                 </div>
 
-                <p className="font-body text-xs text-gray-400 mb-1">{w.date}</p>
-                <h3 className="font-heading font-semibold text-navy text-lg mb-2">{w.title}</h3>
-                <p className="font-body text-navy/60 text-sm leading-relaxed">{w.description}</p>
+                {/* Content Area */}
+                <div className="p-8 pt-0 flex flex-col flex-grow relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 -mt-7 mb-5 shadow-lg border border-gray-50 flex-shrink-0 relative">
+                    <w.icon size={26} className="text-primary group-hover:text-white transition-colors" />
+                  </div>
+
+                  <p className="font-body text-xs text-navy/40 font-bold tracking-widest uppercase mb-2">{w.date}</p>
+                  <h3 className="font-heading font-bold text-navy text-xl leading-tight mb-3 group-hover:text-primary transition-colors">{w.title}</h3>
+                  <p className="font-body text-navy/60 leading-relaxed text-sm">{w.description}</p>
+                </div>
               </div>
             ))}
           </div>
