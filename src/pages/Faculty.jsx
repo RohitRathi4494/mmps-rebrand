@@ -30,6 +30,17 @@ const facultyGroups = [
   }
 ];
 
+import cmsFaculty from '../content/data/faculty.json';
+
+// Group dynamic faculty by department
+const dynamicFacultyGroups = Array.from(new Set(cmsFaculty.map(m => m.department))).map(dept => ({
+  category: dept,
+  members: cmsFaculty.filter(m => m.department === dept && m.active !== false)
+}));
+
+// Combine with static groups
+const allFacultyGroups = [...dynamicFacultyGroups, ...facultyGroups];
+
 export default function Faculty() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -62,7 +73,7 @@ export default function Faculty() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="space-y-24">
-            {facultyGroups.map((group, idx) => (
+            {allFacultyGroups.map((group, idx) => (
               <div key={idx}>
                 <div className="flex items-center gap-6 mb-12">
                   <h2 className="font-heading font-bold text-3xl text-navy">{group.category}</h2>

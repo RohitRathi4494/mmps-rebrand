@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. (Mrs.) R. Sharma",
+    "role": "Principal",
+    "department": "Administration",
+    "qualification": "M.A., B.Ed., Ph.D.",
+    "experience": "25+ Years",
+    "image": "/images/teacher-f2.png",
+    "active": true
+  }
+]

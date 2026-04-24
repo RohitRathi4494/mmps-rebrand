@@ -1,0 +1,13 @@
+{
+  "heroBadge": "Admissions Open · Session 2026-27",
+  "heroTitle": "Where Vision",
+  "heroHighlight": "Meets Values",
+  "heroSubtitle": "Shaping global citizens with strong roots and global wings — Gurugram's trusted name in CBSE education since 1992.",
+  "heroBgImage": "/school.webp",
+  "stats": [
+    { "value": "800+", "label": "Students", "emoji": "🎓" },
+    { "value": "5 Acres", "label": "Green Campus", "emoji": "🌿" },
+    { "value": "30+", "label": "Years of Legacy", "emoji": "🏆" },
+    { "value": "100%", "label": "Board Results", "emoji": "📊" }
+  ]
+}

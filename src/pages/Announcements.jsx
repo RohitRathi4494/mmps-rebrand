@@ -59,23 +59,23 @@ const typeBadgeColors = {
   New: 'bg-purple-100 text-purple-700',
 };
 
-// Fetch Dynamic Decap CMS Announcements
-const rawCmsAnnouncements = import.meta.glob('../content/announcements/*.json', { eager: true, import: 'default' });
-const cmsAnnouncements = Object.values(rawCmsAnnouncements).map(item => {
-  const formattedDate = item.date 
-    ? new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-    : 'Recently Added';
+import cmsAnnouncements from '../content/data/announcements.json';
 
-  return {
-    date: formattedDate,
-    type: item.tag || 'Info',
-    title: item.title || 'Notice',
-    excerpt: item.description || 'No further details provided.',
-    important: item.tag === 'Urgent' || item.tag === 'New',
-  };
-});
+const allAnnouncements = [...cmsAnnouncements, ...announcements]
+  .filter(item => item.active !== false)
+  .map(item => {
+    const formattedDate = item.date 
+      ? new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      : 'Recently Added';
 
-const allAnnouncements = [...cmsAnnouncements, ...announcements];
+    return {
+      date: formattedDate,
+      type: item.category || item.type || 'Info',
+      title: item.title || 'Notice',
+      excerpt: item.description || item.excerpt || 'No further details provided.',
+      important: item.important || false,
+    };
+  });
 
 export default function Announcements() {
   return (

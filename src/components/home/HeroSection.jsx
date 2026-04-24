@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, PlayCircle } from 'lucide-react';
-import homeData from '../../content/pages/home.json';
+import homeData from '../../content/data/home.json';
 
 export default function HeroSection() {
   const { heroBgImage, heroBadge, heroTitle, heroHighlight, heroSubtitle, stats } = homeData;

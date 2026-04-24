@@ -63,25 +63,26 @@ const categoryColors = {
   Events: 'bg-accent/10 text-accent',
 };
 
-// Fetch Dynamic Decap CMS Posts
-const rawCmsPosts = import.meta.glob('../content/blogs/*.json', { eager: true, import: 'default' });
-const cmsPosts = Object.values(rawCmsPosts).map(post => {
-  // Gracefully handle date parsing
-  const formattedDate = post.date 
-    ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-    : 'Recently Added';
+import cmsBlogs from '../content/data/blogs.json';
 
-  return {
-    date: formattedDate,
-    category: post.tag || 'Updates',
-    title: post.title || 'Untitled',
-    excerpt: post.summary || (post.body && post.body.substring(0, 120) + '...') || 'No description provided.',
-    image: post.image || '/school.webp',
-    readTime: 'New Post',
-  };
-});
+const cmsPosts = cmsBlogs
+  .filter(post => post.status === 'published')
+  .map(post => {
+    const formattedDate = post.date 
+      ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      : 'Recently Added';
 
-// Combine dynamic posts first, then fallback static posts
+    return {
+      date: formattedDate,
+      category: post.category || 'Updates',
+      title: post.title || 'Untitled',
+      excerpt: post.excerpt || (post.content && post.content.replace(/<[^>]*>/g, '').substring(0, 120) + '...') || 'No description provided.',
+      image: post.image || '/school.webp',
+      readTime: 'New Post',
+    };
+  });
+
+// Combine dynamic posts first (newest to oldest), then fallback static posts
 const allPosts = [...cmsPosts, ...posts];
 
 export default function Blog() {
