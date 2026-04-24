@@ -54,7 +54,28 @@ const typeBadgeColors = {
   Event: 'bg-sky-100 text-sky-700',
   Holiday: 'bg-amber-100 text-amber-700',
   Academic: 'bg-green-100 text-green-700',
+  Info: 'bg-gray-100 text-gray-700',
+  Urgent: 'bg-red-100 text-red-700',
+  New: 'bg-purple-100 text-purple-700',
 };
+
+// Fetch Dynamic Decap CMS Announcements
+const rawCmsAnnouncements = import.meta.glob('../content/announcements/*.json', { eager: true, import: 'default' });
+const cmsAnnouncements = Object.values(rawCmsAnnouncements).map(item => {
+  const formattedDate = item.date 
+    ? new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    : 'Recently Added';
+
+  return {
+    date: formattedDate,
+    type: item.tag || 'Info',
+    title: item.title || 'Notice',
+    excerpt: item.description || 'No further details provided.',
+    important: item.tag === 'Urgent' || item.tag === 'New',
+  };
+});
+
+const allAnnouncements = [...cmsAnnouncements, ...announcements];
 
 export default function Announcements() {
   return (
@@ -78,7 +99,7 @@ export default function Announcements() {
           </div>
 
           <div className="space-y-5">
-            {announcements.map((item, i) => (
+            {allAnnouncements.map((item, i) => (
               <div
                 key={i}
                 className={`group relative bg-white rounded-2xl p-6 border shadow-sm hover:shadow-md transition-all duration-300 ${

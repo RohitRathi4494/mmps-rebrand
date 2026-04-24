@@ -116,6 +116,22 @@ const months = [
   },
 ];
 
+// Fetch Dynamic Decap CMS Events
+const rawCmsEvents = import.meta.glob('../content/events/*.json', { eager: true, import: 'default' });
+const cmsEventsList = Object.values(rawCmsEvents).map(ev => ({
+  date: ev.dateRange || 'TBD',
+  name: ev.title || 'Untitled Event',
+  type: ev.category ? ev.category.toLowerCase() : 'event',
+}));
+
+const cmsMonths = cmsEventsList.length > 0 ? [{
+  month: 'School Updates (Dynamically Added)',
+  color: 'bg-navy',
+  events: cmsEventsList
+}] : [];
+
+const allMonths = [...cmsMonths, ...months];
+
 const typeMeta = {
   session: { label: 'Session', color: 'bg-sky-100 text-sky-700' },
   academic: { label: 'Academic', color: 'bg-green-100 text-green-700' },
@@ -153,7 +169,7 @@ export default function AcademicCalendar() {
       {/* Month Accordion */}
       <section className="py-10 md:py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          {months.map((m) => (
+          {allMonths.map((m) => (
             <div key={m.month} className="rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <button
                 onClick={() => setExpanded(expanded === m.month ? null : m.month)}

@@ -63,6 +63,27 @@ const categoryColors = {
   Events: 'bg-accent/10 text-accent',
 };
 
+// Fetch Dynamic Decap CMS Posts
+const rawCmsPosts = import.meta.glob('../content/blogs/*.json', { eager: true, import: 'default' });
+const cmsPosts = Object.values(rawCmsPosts).map(post => {
+  // Gracefully handle date parsing
+  const formattedDate = post.date 
+    ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    : 'Recently Added';
+
+  return {
+    date: formattedDate,
+    category: post.tag || 'Updates',
+    title: post.title || 'Untitled',
+    excerpt: post.summary || (post.body && post.body.substring(0, 120) + '...') || 'No description provided.',
+    image: post.image || '/school.webp',
+    readTime: 'New Post',
+  };
+});
+
+// Combine dynamic posts first, then fallback static posts
+const allPosts = [...cmsPosts, ...posts];
+
 export default function Blog() {
   return (
     <div className="bg-ivory min-h-screen">
@@ -76,31 +97,31 @@ export default function Blog() {
 
           {/* Featured Post */}
           <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 mb-12 lg:grid lg:grid-cols-2">
-            <div className="relative overflow-hidden aspect-video lg:aspect-auto">
+            <div className="relative overflow-hidden aspect-video lg:aspect-auto border-r border-gray-100">
               <img
-                src={posts[0].image}
-                alt={posts[0].title}
+                src={allPosts[0].image}
+                alt={allPosts[0].title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-5 left-5">
-                <span className="px-3 py-1.5 bg-accent text-white text-xs font-heading font-bold rounded-full">
+                <span className="px-3 py-1.5 bg-accent text-white text-xs font-heading font-bold rounded-full shadow-lg">
                   Featured Post
                 </span>
               </div>
             </div>
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-heading font-medium ${categoryColors[posts[0].category]}`}>
-                  {posts[0].category}
+                <span className={`px-3 py-1 rounded-full text-xs font-heading font-medium ${categoryColors[allPosts[0].category] || 'bg-gray-100 text-gray-700'}`}>
+                  {allPosts[0].category}
                 </span>
                 <span className="font-body text-xs text-gray-400 flex items-center gap-1">
-                  <Calendar size={12} /> {posts[0].date}
+                  <Calendar size={12} /> {allPosts[0].date}
                 </span>
               </div>
               <h2 className="font-heading font-bold text-2xl md:text-3xl text-navy mb-4 leading-tight">
-                {posts[0].title}
+                {allPosts[0].title}
               </h2>
-              <p className="font-body text-navy/60 leading-relaxed mb-6">{posts[0].excerpt}</p>
+              <p className="font-body text-navy/60 leading-relaxed mb-6">{allPosts[0].excerpt}</p>
               <div className="flex items-center gap-2 text-accent font-heading font-semibold text-sm group/link cursor-pointer">
                 Read Full Article
                 <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
@@ -110,7 +131,7 @@ export default function Blog() {
 
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.slice(1).map((post, i) => (
+            {allPosts.slice(1).map((post, i) => (
               <article
                 key={i}
                 className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300"
