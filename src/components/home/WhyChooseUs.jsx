@@ -95,23 +95,25 @@ export default function WhyChooseUs() {
                 key={i}
                 className={`group relative bg-white rounded-2xl p-7 border border-gray-100 ${r.border} shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col`}
               >
-                {/* Top row: icon + stat */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`w-14 h-14 rounded-2xl ${r.softBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon size={28} strokeWidth={1.5} className={`text-${r.color.replace('bg-', '')}`} style={{ color: 'currentColor' }} />
+                {/* Full background fill on hover */}
+                <div className={`absolute inset-0 ${r.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+
+                <div className="relative z-10 flex flex-col h-full pointer-events-none">
+                  {/* Top row: icon + stat */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`w-14 h-14 rounded-2xl ${r.softBg} group-hover:bg-white/20 flex items-center justify-center transition-all duration-300`}>
+                      <Icon size={28} strokeWidth={1.5} className={`text-${r.color.replace('bg-', '')} group-hover:text-white transition-colors duration-300`} />
+                    </div>
+                    {/* Stat badge */}
+                    <div className={`flex flex-col items-end`}>
+                      <span className={`font-heading font-bold text-2xl text-navy group-hover:text-white transition-colors duration-300`}>{r.stat}</span>
+                      <span className="font-body text-xs text-navy/40 group-hover:text-white/80 uppercase tracking-wider transition-colors duration-300">{r.statLabel}</span>
+                    </div>
                   </div>
-                  {/* Stat badge */}
-                  <div className={`flex flex-col items-end`}>
-                    <span className={`font-heading font-bold text-2xl text-navy`}>{r.stat}</span>
-                    <span className="font-body text-xs text-navy/40 uppercase tracking-wider">{r.statLabel}</span>
-                  </div>
+
+                  <h3 className="font-heading font-bold text-xl text-navy group-hover:text-white mb-3 transition-colors duration-300">{r.title}</h3>
+                  <p className="font-body text-navy/60 group-hover:text-white/90 leading-relaxed text-sm flex-1 transition-colors duration-300">{r.description}</p>
                 </div>
-
-                <h3 className="font-heading font-bold text-xl text-navy mb-3">{r.title}</h3>
-                <p className="font-body text-navy/60 leading-relaxed text-sm flex-1">{r.description}</p>
-
-                {/* Bottom accent bar appears on hover */}
-                <div className={`absolute bottom-0 left-0 right-0 h-0.5 ${r.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-b-2xl`} />
               </div>
             );
           })}
