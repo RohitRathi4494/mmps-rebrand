@@ -13,14 +13,17 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
       {/* Background Image & Overlay */}
-      <div
+      <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/school.webp')" }}
-      />
-      {/* Dark overlay — stronger at bottom for text legibility */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
-      {/* Subtle warm-light vignette from left */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-navy/80 via-transparent to-transparent" />
+      >
+        {/* The "Earlier" Overlay Style — Very Premium & Transparent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/40 to-transparent mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent"></div>
+        
+        {/* Geometric Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12 pt-40">
