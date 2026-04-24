@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHero from '../components/ui/PageHero';
 import { Lightbulb, Code2, Leaf, Users2, Brush, Globe2, Rocket } from 'lucide-react';
-
+const workshops = [
   {
     icon: Code2,
     title: 'Annual Coding Bootcamp',
