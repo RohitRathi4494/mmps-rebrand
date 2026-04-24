@@ -85,7 +85,7 @@ export default function AdmissionsProcess() {
       />
 
       {/* Steps */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -120,7 +120,7 @@ export default function AdmissionsProcess() {
       </section>
 
       {/* Documents + Key Dates */}
-      <section className="py-20 md:py-24 bg-gray-50">
+      <section className="py-12 md:py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10">
 
@@ -180,7 +180,7 @@ export default function AdmissionsProcess() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16 bg-primary text-white">
+      <section className="py-10 bg-primary text-white">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="font-heading font-bold text-3xl mb-3">Ready to Begin?</h2>
           <p className="font-body text-white/70 mb-8 max-w-lg mx-auto">

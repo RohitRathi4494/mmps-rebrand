@@ -60,7 +60,7 @@ export default function Middle() {
       />
 
       {/* Programme Overview */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -117,7 +117,7 @@ export default function Middle() {
       </section>
 
       {/* Subjects Grid */}
-      <section className="py-20 md:py-24 bg-gray-50">
+      <section className="py-12 md:py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-3">
@@ -141,7 +141,7 @@ export default function Middle() {
       </section>
 
       {/* Skills Developed */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-3">
@@ -164,7 +164,7 @@ export default function Middle() {
       </section>
 
       {/* Dark Banner */}
-      <section className="py-16 bg-primary text-white">
+      <section className="py-10 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
@@ -183,7 +183,7 @@ export default function Middle() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white text-center">
+      <section className="py-10 bg-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h3 className="font-heading font-bold text-2xl text-navy mb-3">Admissions Open for 2026-27</h3>
           <p className="font-body text-navy/60 mb-7">Secure a place in our Middle School for your child today.</p>

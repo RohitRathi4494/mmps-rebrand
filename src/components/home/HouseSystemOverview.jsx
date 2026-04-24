@@ -42,7 +42,7 @@ const houses = [
 
 export default function HouseSystemOverview() {
   return (
-    <section className="py-20 md:py-28 bg-navy relative overflow-hidden">
+    <section className="py-12 md:py-10 bg-navy relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')]"></div>
       

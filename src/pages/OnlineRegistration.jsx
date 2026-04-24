@@ -24,7 +24,7 @@ export default function OnlineRegistration() {
         subtitle="Begin your child's journey of excellence. Fill in the enquiry form and our team will get back to you within 24 hours."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12 items-start">
 

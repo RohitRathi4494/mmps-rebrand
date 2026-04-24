@@ -7,7 +7,7 @@ export function ChairmanDesk() {
   return (
     <div className="bg-ivory flex flex-col">
       <PageHero title="Chairman's Desk" subtitle="Words of wisdom from our visionary leader." />
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-4 sticky top-32">
@@ -40,7 +40,7 @@ export function PrincipalDesk() {
   return (
     <div className="bg-ivory flex flex-col">
       <PageHero title="Principal's Desk" subtitle="Our commitment to holistic development and student empowerment." />
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-4 md:order-2 sticky top-32">

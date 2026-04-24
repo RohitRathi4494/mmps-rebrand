@@ -35,9 +35,9 @@ export default function Admissions() {
       />
 
       {/* Process Section */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-24">
+          <div className="text-center mb-16 md:mb-12">
             <h2 className="font-heading font-bold text-3xl md:text-5xl text-navy mb-4">Admission <span className="text-primary italic">Process</span></h2>
             <p className="font-body text-navy/60 text-lg max-w-2xl mx-auto">A transparent and straightforward process to welcome you to our community.</p>
           </div>
@@ -66,7 +66,7 @@ export default function Admissions() {
       </section>
 
       {/* Checklist & Form Grid */}
-      <section className="py-20 md:py-28 bg-ivory">
+      <section className="py-12 md:py-10 bg-ivory">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             

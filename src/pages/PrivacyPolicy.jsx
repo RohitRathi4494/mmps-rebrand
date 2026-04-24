@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
         subtitle="Your privacy is important to us. This policy outlines how M M Public School collects, uses, and protects your information."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm mb-8">

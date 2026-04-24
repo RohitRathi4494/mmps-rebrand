@@ -9,7 +9,7 @@ const skills = [
 
 export default function ExtracurricularSkill() {
   return (
-    <section className="py-20 bg-ivory relative border-y border-gray-100">
+    <section className="py-12 bg-ivory relative border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">

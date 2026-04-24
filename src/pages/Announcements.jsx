@@ -64,7 +64,7 @@ export default function Announcements() {
         subtitle="Stay up-to-date with the latest news, events, and important notices from M M Public School."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="flex items-center gap-3 mb-10">

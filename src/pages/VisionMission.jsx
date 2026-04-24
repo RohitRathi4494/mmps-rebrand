@@ -15,7 +15,7 @@ export default function VisionMission() {
         image="https://source.unsplash.com/1600x900/?vision,purpose,aspirations"
       />
 
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-12 md:py-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
@@ -73,7 +73,7 @@ export default function VisionMission() {
           </div>
 
           {/* Philosophy Strip */}
-          <div className="mt-24 md:mt-32 p-8 md:p-14 bg-white rounded-[3rem] shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+          <div className="mt-12 md:mt-32 p-8 md:p-14 bg-white rounded-[3rem] shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
             <div className="shrink-0 w-full md:w-1/3">
               <h3 className="font-heading font-bold text-2xl md:text-3xl text-navy">Our Core Philosophy</h3>
               <p className="font-body text-navy/60 mt-4 leading-relaxed">The bedrock on which MMPS stands tall since 1992.</p>

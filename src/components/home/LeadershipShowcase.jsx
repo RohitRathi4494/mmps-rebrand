@@ -7,7 +7,7 @@ export default function LeadershipShowcase() {
   const [activeTab, setActiveTab] = useState('chairman');
 
   return (
-    <section className="py-20 md:py-28 bg-white relative">
+    <section className="py-12 md:py-10 bg-white relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Tabs */}

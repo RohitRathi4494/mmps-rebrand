@@ -45,7 +45,7 @@ export default function Academics() {
       />
 
       {/* Curriculum Blocks */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24 md:space-y-32">
             {levels.map((level, idx) => {
@@ -124,7 +124,7 @@ export default function Academics() {
       </section>
 
       {/* Lab Tour Mini-Section */}
-      <section className="py-24 bg-navy text-white">
+      <section className="py-12 bg-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-heading font-bold text-3xl md:text-5xl mb-4">State-of-the-Art <span className="text-gold italic">Laboratories</span></h2>

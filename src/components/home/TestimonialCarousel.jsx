@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   return (
-    <section className="py-20 md:py-28 bg-ivory relative border-t border-gray-100">
+    <section className="py-12 md:py-10 bg-ivory relative border-t border-gray-100">
       <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

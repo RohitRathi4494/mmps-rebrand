@@ -23,9 +23,9 @@ export default function StudentCouncil() {
       />
 
       {/* Leadership Cabinet */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/10 text-gold font-heading font-semibold text-xs rounded-full mb-6 uppercase tracking-wider">
               <Star size={14} className="fill-gold" /> The Core Cabinet
             </div>
@@ -58,7 +58,7 @@ export default function StudentCouncil() {
       </section>
 
       {/* Roles & Responsibilities */}
-      <section className="py-24 bg-ivory border-t border-gray-100">
+      <section className="py-12 bg-ivory border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="flex flex-col gap-6">
@@ -97,7 +97,7 @@ export default function StudentCouncil() {
       </section>
 
       {/* Quote Banner */}
-      <section className="py-24 bg-primary text-white text-center relative overflow-hidden">
+      <section className="py-12 bg-primary text-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <BookOpen className="text-accent mx-auto mb-8 animate-bounce-slow" size={48} />

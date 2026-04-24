@@ -41,7 +41,7 @@ export default function About() {
       </div>
 
       {/* Vision Quote Strip */}
-      <section className="py-24 bg-navy text-white relative overflow-hidden">
+      <section className="py-12 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <ShieldCheck className="mx-auto mb-8 text-accent opacity-50" size={48} />
@@ -66,7 +66,7 @@ function OverviewSection() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden">
+    <section className="py-12 md:py-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -118,7 +118,7 @@ function OverviewSection() {
         </div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {pillars.map((p, i) => (
             <div key={i} className="bg-ivory p-7 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
               <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center mb-5 group-hover:bg-ivory transition-colors">
@@ -136,7 +136,7 @@ function OverviewSection() {
 
 function VisionSection() {
   return (
-    <section className="py-24 md:py-32 bg-ivory relative overflow-hidden">
+    <section className="py-12 md:py-10 bg-ivory relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 text-accent font-heading font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">
@@ -151,7 +151,7 @@ function VisionSection() {
           <div className="pt-16 md:pt-24 h-full">
             <div className="relative bg-accent rounded-[2.5rem] px-5 sm:px-8 pb-14 pt-0 shadow-lg h-full transition-transform duration-500 hover:-translate-y-2">
               {/* White Card (Overlapping) */}
-              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-20 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
+              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-12 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
                 <div className="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center mb-6 bg-gray-50/50">
                   <Target className="text-navy stroke-1" size={40} />
                 </div>
@@ -177,7 +177,7 @@ function VisionSection() {
           <div className="pt-16 md:pt-24 h-full">
             <div className="relative bg-primary rounded-[2.5rem] px-5 sm:px-8 pb-14 pt-0 shadow-lg h-full transition-transform duration-500 hover:-translate-y-2">
               {/* White Card (Overlapping) */}
-              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-20 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
+              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-12 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
                 <div className="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center mb-6 bg-gray-50/50">
                   <Eye className="text-navy stroke-1" size={40} />
                 </div>
@@ -230,7 +230,7 @@ function VisionSection() {
 
 function LeadershipSection() {
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-12 md:py-10 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary font-heading font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">
@@ -241,7 +241,7 @@ function LeadershipSection() {
         </div>
 
         {/* Chairman */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-12">
           <div className="lg:col-span-5">
             <div className="relative group">
               <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl transition-all duration-500" />
@@ -323,7 +323,7 @@ function InfrastructureSection() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-gray-50">
+    <section className="py-12 md:py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 text-accent font-heading font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">

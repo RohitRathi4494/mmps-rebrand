@@ -19,7 +19,7 @@ export default function Careers() {
         image="/school.webp"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-16">
@@ -55,7 +55,7 @@ export default function Careers() {
           </div>
 
           {/* General Application CTA */}
-          <div className="mt-24 p-10 md:p-16 bg-navy rounded-[3.5rem] shadow-2xl relative overflow-hidden text-center text-white">
+          <div className="mt-12 p-10 md:p-16 bg-navy rounded-[3.5rem] shadow-2xl relative overflow-hidden text-center text-white">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
             <div className="relative z-10">
               <Mail className="mx-auto mb-8 text-accent animate-pulse-glow" size={48} />

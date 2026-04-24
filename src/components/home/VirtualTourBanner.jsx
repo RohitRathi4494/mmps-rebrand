@@ -4,7 +4,7 @@ import { MonitorPlay, PlayCircle } from 'lucide-react';
 
 export default function VirtualTourBanner() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-12 md:py-10 overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-[url('/images/campus-aerial.png')] bg-cover bg-center bg-fixed"

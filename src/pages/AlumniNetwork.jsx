@@ -23,7 +23,7 @@ export default function AlumniNetwork() {
         subtitle="Once an MMPSian, always an MMPSian. Connect with our thriving alumni community spread across India and the world."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Stats Row */}

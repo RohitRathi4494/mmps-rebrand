@@ -40,7 +40,7 @@ export default function CbseDisclosure() {
         image="/school.webp"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="inline-flex items-center gap-2 p-4 bg-primary/10 rounded-2xl text-primary font-body text-sm mb-12 border border-primary/20">
@@ -100,7 +100,7 @@ export default function CbseDisclosure() {
           </div>
 
           {/* Compliance Footer */}
-          <div className="mt-24 p-10 bg-ivory rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="mt-12 p-10 bg-ivory rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-4">
               <CheckCircle className="text-green-500" size={32} />
               <div>

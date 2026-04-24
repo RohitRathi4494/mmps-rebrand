@@ -65,7 +65,7 @@ export default function FeeStructure() {
         subtitle="Transparent and straightforward fee details for the academic year 2025-26."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Note banner */}

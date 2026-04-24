@@ -3,7 +3,7 @@ import { ArrowRight, Download, Phone } from 'lucide-react';
 
 export default function EnquiryBanner() {
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-br from-accent to-accent-700 relative overflow-hidden">
+    <section className="py-12 md:py-10 bg-gradient-to-br from-accent to-accent-700 relative overflow-hidden">
       {/* Decorative patterns */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/10 rounded-full mix-blend-overlay filter blur-3xl opacity-50 translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/4 translate-y-1/4"></div>

@@ -34,7 +34,7 @@ export default function Gallery() {
         image="/images/campus-aerial.png"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Filters */}
@@ -83,7 +83,7 @@ export default function Gallery() {
           </div>
           
           {/* Load More/CTA */}
-          <div className="mt-20 text-center">
+          <div className="mt-12 text-center">
             <p className="font-body text-navy/40 mb-8 italic">Showing {filteredItems.length} of over 2,000+ archived memories.</p>
             <button className="bg-navy text-white font-heading font-bold px-10 py-4 rounded-full shadow-xl shadow-navy/20 hover:bg-navy-950 transition-all hover:-translate-y-1">
               Load More Photos
@@ -94,7 +94,7 @@ export default function Gallery() {
       </section>
       
       {/* Visual Stats */}
-      <section className="py-24 bg-accent text-white">
+      <section className="py-12 bg-accent text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-around items-center gap-12">
           <div className="text-center">
             <Camera className="mx-auto mb-4 opacity-50" size={40} />

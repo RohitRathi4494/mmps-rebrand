@@ -13,7 +13,7 @@ export default function VirtualTour() {
         image="/images/campus-aerial.png"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Main Viewer Block */}
@@ -66,7 +66,7 @@ export default function VirtualTour() {
           </div>
           
           {/* Detailed Points of Interest */}
-          <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               { title: 'The Junior Block', desc: 'Designed for early learners with colorful, safe, and engaging activity spaces.', icon: '🏫' },
               { title: 'Modern Physics Lab', desc: 'Equipped with the latest apparatus and safety measures for senior researchers.', icon: '🥼' },

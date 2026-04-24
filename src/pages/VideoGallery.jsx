@@ -20,7 +20,7 @@ export default function VideoGallery() {
         image="/school.webp"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -67,7 +67,7 @@ export default function VideoGallery() {
           </div>
 
           {/* YouTube Links Strip */}
-          <div className="mt-24 p-10 md:p-16 bg-navy rounded-[3rem] text-center relative overflow-hidden shadow-2xl">
+          <div className="mt-12 p-10 md:p-16 bg-navy rounded-[3rem] text-center relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
             <div className="relative z-10">
               <h2 className="font-heading font-bold text-3xl md:text-5xl text-white mb-6">More on YouTube</h2>

@@ -151,7 +151,7 @@ export default function AcademicCalendar() {
       </section>
 
       {/* Month Accordion */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 md:py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           {months.map((m) => (
             <div key={m.month} className="rounded-2xl border border-gray-100 shadow-sm overflow-hidden">

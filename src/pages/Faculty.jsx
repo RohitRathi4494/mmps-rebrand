@@ -58,7 +58,7 @@ export default function Faculty() {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="space-y-24">
@@ -101,7 +101,7 @@ export default function Faculty() {
       </section>
       
       {/* Join Us CTA */}
-      <section className="py-20 bg-ivory">
+      <section className="py-12 bg-ivory">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-heading font-bold text-3xl text-navy mb-6">Want to Join Our Team?</h2>
           <p className="font-body text-navy/60 text-lg mb-10 leading-relaxed">We are always looking for passionate educators who want to make a difference in the lives of children. Check our careers page for current openings.</p>

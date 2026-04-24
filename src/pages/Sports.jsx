@@ -29,7 +29,7 @@ export default function Sports() {
       />
 
       {/* MMMICT Highlight */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
@@ -74,7 +74,7 @@ export default function Sports() {
       </section>
 
       {/* Other Sports Grid */}
-      <section className="py-20 md:py-32 bg-ivory">
+      <section className="py-12 md:py-10 bg-ivory">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl md:text-5xl text-navy mb-4">Multi-Sport <span className="text-primary italic">Culture</span></h2>
           <p className="font-body text-navy/60 text-lg mb-16 max-w-2xl mx-auto">Beyond cricket, we provide opportunities for students to excel in various physical disciplines.</p>
@@ -92,7 +92,7 @@ export default function Sports() {
       </section>
       
       {/* Infrastructure Bar */}
-      <section className="py-16 bg-navy text-white">
+      <section className="py-10 bg-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="flex items-center gap-6">
             <Target className="text-accent" size={40} />

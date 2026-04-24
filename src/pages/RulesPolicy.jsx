@@ -56,7 +56,7 @@ export default function RulesPolicy() {
         image="/school.webp"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
@@ -83,7 +83,7 @@ export default function RulesPolicy() {
             })}
           </div>
 
-          <div className="mt-24 p-10 md:p-16 bg-navy rounded-[3rem] text-white text-center shadow-2xl relative overflow-hidden">
+          <div className="mt-12 p-10 md:p-16 bg-navy rounded-[3rem] text-white text-center shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
             <div className="relative z-10">
               <h2 className="font-heading font-bold text-3xl md:text-5xl mb-6">Student Handbook</h2>

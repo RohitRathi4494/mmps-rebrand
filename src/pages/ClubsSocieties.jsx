@@ -69,7 +69,7 @@ export default function ClubsSocieties() {
         subtitle="Beyond academics — MMPS nurtures hidden talents through a rich array of clubs that inspire passion and build character."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">

@@ -15,7 +15,7 @@ export default function Contact() {
         image="/images/school-reception.png"
       />
 
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
@@ -143,7 +143,7 @@ export default function Contact() {
           </div>
           
           {/* Map Section */}
-          <div className="mt-20 md:mt-32 rounded-[3.5rem] overflow-hidden shadow-2xl h-[450px] border-8 border-ivory relative group">
+          <div className="mt-12 md:mt-32 rounded-[3.5rem] overflow-hidden shadow-2xl h-[450px] border-8 border-ivory relative group">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.8770732442436!2d77.021008076127!3d28.453118192209732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d6756610dd%3A0xc3c5756610dd0000!2sMM%20Public%20School%2C%20Sector%204!5e0!3m2!1sen!2sin!4v1713689234567!5m2!1sen!2sin" 
               className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" 
