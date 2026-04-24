@@ -6,83 +6,116 @@ const reasons = [
     icon: Award,
     title: '30+ Years of Excellence',
     description: 'Nurturing generations since 1992 with a proven track record of academic and holistic success.',
-    color: 'bg-primary-50',
-    iconColor: 'text-primary'
+    stat: '1992',
+    statLabel: 'Est.',
+    color: 'bg-primary',
+    softBg: 'bg-primary/5',
+    border: 'hover:border-primary/30',
   },
   {
     icon: Leaf,
-    title: '5-Acre Lush Green Campus',
+    title: '5-Acre Green Campus',
     description: 'A serene, pollution-free environment fostering physical well-being and a calm state of mind.',
-    color: 'bg-green-50',
-    iconColor: 'text-green-500'
+    stat: '5',
+    statLabel: 'Acres',
+    color: 'bg-green-500',
+    softBg: 'bg-green-50',
+    border: 'hover:border-green-200',
   },
   {
     icon: BookOpen,
-    title: 'CBSE NCF/NEP Curriculum',
+    title: 'CBSE NEP Curriculum',
     description: 'Progressive educational framework blending deep Indian roots with a global outlook.',
-    color: 'bg-gold-50',
-    iconColor: 'text-gold-600'
+    stat: '100%',
+    statLabel: 'Results',
+    color: 'bg-gold',
+    softBg: 'bg-amber-50',
+    border: 'hover:border-amber-200',
   },
   {
     icon: MonitorPlay,
     title: 'Smart Classrooms',
-    description: 'Technology-enabled learning spaces that make education interactive, engaging, and highly effective.',
-    color: 'bg-sky-50',
-    iconColor: 'text-sky-500'
+    description: 'Technology-enabled learning spaces that make education interactive, engaging, and effective.',
+    stat: '30+',
+    statLabel: 'Rooms',
+    color: 'bg-sky-500',
+    softBg: 'bg-sky-50',
+    border: 'hover:border-sky-200',
   },
   {
     icon: Users,
     title: 'Expert Faculty',
-    description: 'Highly qualified, experienced educators committed to providing personalized attention and mentorship.',
-    color: 'bg-violet-50',
-    iconColor: 'text-violet-500'
+    description: 'Highly qualified educators committed to providing personalized attention and mentorship.',
+    stat: '60+',
+    statLabel: 'Teachers',
+    color: 'bg-violet-500',
+    softBg: 'bg-violet-50',
+    border: 'hover:border-violet-200',
   },
   {
     icon: HeartHandshake,
     title: 'Holistic Development',
-    description: 'Extensive skill training, sports, and co-curricular programs ensuring well-rounded growth.',
-    color: 'bg-accent-50',
-    iconColor: 'text-accent'
-  }
+    description: 'Extensive sports, arts, and co-curricular programs ensuring well-rounded student growth.',
+    stat: '20+',
+    statLabel: 'Clubs',
+    color: 'bg-accent',
+    softBg: 'bg-red-50',
+    border: 'hover:border-red-200',
+  },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 md:py-28 bg-white relative">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl md:text-5xl text-navy mb-4">
-            Why Choose <span className="text-primary">MMPS?</span>
-          </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
-          <p className="font-body text-navy/70 text-lg">
-            A comprehensive educational experience designed to empower students for the challenges of tomorrow.
+
+        {/* Header */}
+        <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+              ✦ Why MMPS
+            </div>
+            <h2 className="font-heading font-bold text-3xl md:text-5xl text-navy leading-tight">
+              A School That<br />
+              <span className="text-accent">Truly Cares</span>
+            </h2>
+          </div>
+          <p className="font-body text-navy/60 text-lg leading-relaxed">
+            For over three decades, we've been building more than just academics —
+            we build character, confidence, and a lifelong love of learning.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon;
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reasons.map((r, i) => {
+            const Icon = r.icon;
             return (
-              <div 
-                key={index} 
-                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              <div
+                key={i}
+                className={`group relative bg-white rounded-2xl p-7 border border-gray-100 ${r.border} shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col`}
               >
-                <div className={`w-16 h-16 rounded-2xl ${reason.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className={`${reason.iconColor}`} size={32} strokeWidth={1.5} />
+                {/* Top row: icon + stat */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className={`w-14 h-14 rounded-2xl ${r.softBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon size={28} strokeWidth={1.5} className={`text-${r.color.replace('bg-', '')}`} style={{ color: 'currentColor' }} />
+                  </div>
+                  {/* Stat badge */}
+                  <div className={`flex flex-col items-end`}>
+                    <span className={`font-heading font-bold text-2xl text-navy`}>{r.stat}</span>
+                    <span className="font-body text-xs text-navy/40 uppercase tracking-wider">{r.statLabel}</span>
+                  </div>
                 </div>
-                <h3 className="font-heading font-bold text-xl text-navy mb-3">
-                  {reason.title}
-                </h3>
-                <p className="font-body text-navy/60 leading-relaxed text-sm md:text-base">
-                  {reason.description}
-                </p>
+
+                <h3 className="font-heading font-bold text-xl text-navy mb-3">{r.title}</h3>
+                <p className="font-body text-navy/60 leading-relaxed text-sm flex-1">{r.description}</p>
+
+                {/* Bottom accent bar appears on hover */}
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 ${r.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-b-2xl`} />
               </div>
             );
           })}
         </div>
-        
       </div>
     </section>
   );

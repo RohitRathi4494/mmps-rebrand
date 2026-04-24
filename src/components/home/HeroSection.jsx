@@ -1,84 +1,81 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, PlayCircle, Users, BookOpen, Award, MapPin } from 'lucide-react';
+import { ArrowRight, PlayCircle } from 'lucide-react';
+
+const stats = [
+  { value: '800+', label: 'Students', emoji: '🎓' },
+  { value: '5 Acres', label: 'Green Campus', emoji: '🌿' },
+  { value: '30+', label: 'Years of Legacy', emoji: '🏆' },
+  { value: '100%', label: 'Board Results', emoji: '📊' },
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
       {/* Background Image & Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-[url('/school.webp')] bg-cover bg-center"
-        style={{ backgroundAttachment: 'fixed' }} // Optional parallax
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-primary/80 to-primary/40 mix-blend-multiply"></div>
-        {/* Adds a slight geometric pattern on top */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-      </div>
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/school.webp')",
+          backgroundAttachment: 'fixed',
+        }}
+      />
+      {/* Dark overlay — stronger at bottom for text legibility */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
+      {/* Subtle warm-light vignette from left */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-navy/80 via-transparent to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-12 pb-32">
-        <div className="max-w-3xl animate-fade-in-up">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-gold/20 backdrop-blur-md border border-gold/30 text-gold font-body text-sm font-semibold mb-6 animate-pulse-glow">
-            Admission Open 2026-27
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12 pt-40">
+        <div className="max-w-3xl">
+
+          {/* Pill badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/40 text-gold font-body text-sm font-semibold mb-6">
+            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            Admissions Open · Session 2026-27
           </div>
-          
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Where Vision <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-accent pr-4">Meets Values</span>
+
+          <h1 className="font-heading text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-white mb-6 leading-[1.05] tracking-tight">
+            Where Vision<br />
+            <span className="text-gold">Meets Values</span>
           </h1>
-          
-          <p className="font-body text-xl text-white/90 mb-10 max-w-2xl leading-relaxed font-light drop-shadow">
-            Producing global citizens who respect and celebrate differences since 1992. 
-            Join the Maru Mal Education Board legacy.
+
+          <p className="font-body text-lg md:text-xl text-white/75 mb-10 max-w-xl leading-relaxed">
+            Shaping global citizens with strong roots and global wings —
+            Gurugram's trusted name in CBSE education since 1992.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link 
-              to="/admissions" 
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-accent-600 text-white font-heading font-semibold rounded-full shadow-[0_0_20px_rgba(255,107,53,0.4)] hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] transition-all hover:-translate-y-1 group"
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              to="/admissions/register"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-heading font-bold rounded-full shadow-lg hover:bg-red-700 transition-all hover:-translate-y-0.5 group text-base"
             >
-              Enroll Now 2026-27
+              Apply Now 2026-27
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            
-            <Link 
-              to="/virtual-tour" 
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-heading font-semibold rounded-full transition-all hover:-translate-y-1"
+
+            <Link
+              to="/virtual-tour"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white font-heading font-semibold rounded-full transition-all hover:-translate-y-0.5 text-base"
             >
               <PlayCircle size={20} className="text-gold" />
               Virtual Campus Tour
             </Link>
           </div>
         </div>
-      </div>
 
-      {/* Floating Stats Bar */}
-      <div className="absolute bottom-0 left-0 right-0 w-full z-20 translate-y-1/2 hidden md:block">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 grid grid-cols-2 md:grid-cols-4 divide-y divide-gray-100 md:divide-y-0 md:divide-x border border-gray-100 animate-slide-in-up" style={{ animationDelay: '400ms' }}>
-            <div className="flex flex-col items-center justify-center p-4 group">
-              <Users className="text-accent mb-2 group-hover:scale-110 transition-transform" size={28} />
-              <div className="font-heading font-bold text-3xl text-navy">800+</div>
-              <div className="text-xs font-body text-navy/60 uppercase font-semibold tracking-wider">Students</div>
+        {/* ── Stats Row — inline below hero text ───────────────── */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              className="group flex flex-col items-center text-center py-5 px-4 rounded-2xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 transition-all hover:-translate-y-0.5"
+            >
+              <span className="text-2xl mb-2">{s.emoji}</span>
+              <span className="font-heading font-bold text-2xl md:text-3xl text-white">{s.value}</span>
+              <span className="font-body text-xs text-white/60 uppercase tracking-widest font-medium mt-0.5">{s.label}</span>
             </div>
-            
-            <div className="flex flex-col items-center justify-center p-4 group">
-              <MapPin className="text-primary mb-2 group-hover:scale-110 transition-transform" size={28} />
-              <div className="font-heading font-bold text-3xl text-navy">5 Acres</div>
-              <div className="text-xs font-body text-navy/60 uppercase font-semibold tracking-wider">Campus</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-4 group">
-              <Award className="text-gold-500 mb-2 group-hover:scale-110 transition-transform" size={28} />
-              <div className="font-heading font-bold text-3xl text-navy">30+ Yrs</div>
-              <div className="text-xs font-body text-navy/60 uppercase font-semibold tracking-wider">Legacy</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-4 group">
-              <BookOpen className="text-green-500 mb-2 group-hover:scale-110 transition-transform" size={28} />
-              <div className="font-heading font-bold text-3xl text-navy">100%</div>
-              <div className="text-xs font-body text-navy/60 uppercase font-semibold tracking-wider">Results</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
