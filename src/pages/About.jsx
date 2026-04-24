@@ -8,6 +8,7 @@ import {
   Monitor, Microscope, BookOpen, Music, Dumbbell, Palette,
   Wifi, TreePine, BusFront, Utensils
 } from 'lucide-react';
+import aboutData from '../content/pages/about.json';
 
 export default function About() {
   const { hash } = useLocation();
@@ -29,7 +30,7 @@ export default function About() {
     <div className="bg-ivory flex flex-col min-h-screen">
       <PageHero
         title="About MMPS"
-        subtitle="A 30-year journey of academic excellence, strong values, and holistic student development."
+        subtitle={aboutData.subtitle}
         image="/school.webp"
       />
 
@@ -58,12 +59,15 @@ export default function About() {
 }
 
 function OverviewSection() {
-  const pillars = [
-    { icon: Building2, title: 'Architecture', desc: 'Unique dual-block design — a dedicated Junior wing and a combined Senior block, ensuring age-appropriate learning environments.', color: 'text-primary' },
-    { icon: History, title: 'Tradition', desc: 'Deeply rooted in social productivity and Indian values, blended seamlessly with a modern global outlook.', color: 'text-accent' },
-    { icon: Award, title: 'Excellence', desc: 'Proven track record of stellar board results, a celebrated sports legacy, and competitive examination successes.', color: 'text-gold' },
-    { icon: Users, title: 'Diversity', desc: 'A thriving co-educational community of 800+ students from Nursery to Grade XII, fostering respect and collaboration.', color: 'text-green-600' },
-  ];
+  const iconMap = [Building2, History, Award, Users];
+  const colorMap = ['text-primary', 'text-accent', 'text-gold', 'text-green-600'];
+  
+  const pillars = aboutData.values.map((v, i) => ({
+    icon: iconMap[i % iconMap.length],
+    title: v.title,
+    desc: v.description,
+    color: colorMap[i % colorMap.length]
+  }));
 
   return (
     <section className="py-12 md:py-10 bg-white overflow-hidden">
@@ -74,14 +78,13 @@ function OverviewSection() {
               About Our School
             </div>
             <h2 className="font-heading font-bold text-3xl md:text-5xl text-navy mb-8 leading-tight">
-              Three Decades of <br />
-              <span className="text-primary italic">Educational Leadership</span>
+              {aboutData.welcomeHeading}
             </h2>
-            <p className="font-body text-navy/70 text-lg leading-relaxed mb-5">
-              Established in 1992 under the guidance of the Maru Mal Education Board, M M Public School (MMPS) has grown into a premier educational institution in Gurugram, Haryana.
+            <p className="font-body text-navy/70 text-lg leading-relaxed mb-5 whitespace-pre-wrap">
+              {aboutData.welcomeText1}
             </p>
-            <p className="font-body text-navy/70 mb-8 leading-relaxed">
-              Our 5-acre co-educational campus is affiliated with CBSE and serves 800+ students from Nursery to Grade XII. We believe in providing a wholesome environment where traditional Indian values meet international perspectives — producing global citizens who are confident, compassionate, and capable.
+            <p className="font-body text-navy/70 mb-8 leading-relaxed whitespace-pre-wrap">
+              {aboutData.welcomeText2}
             </p>
 
             <div className="grid grid-cols-2 gap-5">

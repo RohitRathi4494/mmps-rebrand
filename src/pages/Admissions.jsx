@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PageHero from '../components/ui/PageHero';
 import { ClipboardCheck, Users, FileText, CheckCircle2, Phone, ArrowRight, Download, ExternalLink } from 'lucide-react';
 import { cn } from '../lib/utils';
+import admissionsData from '../content/pages/admissions.json';
 
 export default function Admissions() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', grade: '', message: '' });
@@ -10,12 +11,12 @@ export default function Admissions() {
     window.scrollTo(0, 0);
   }, []);
 
-  const steps = [
-    { icon: FileText, title: 'Fill Online Form', desc: 'Start your journey by filling out our online registration form via UniApply or our direct enquiry form.' },
-    { icon: ClipboardCheck, title: 'Document Submission', desc: 'Secure your spot by submitting necessary documents like Birth Certificate, SLC, and previous Report Cards.' },
-    { icon: Users, title: 'Interaction/Test', desc: 'A friendly interaction or simple assessment test to understand the student’s aptitude and placement.' },
-    { icon: CheckCircle2, title: 'Admission Confirmation', desc: 'Receive your confirmation letter and complete the fee formalities to officially join the MMPS family.' },
-  ];
+  const iconMap = [FileText, ClipboardCheck, Users, CheckCircle2];
+  const steps = admissionsData.steps.map((step, index) => ({
+    icon: iconMap[index % iconMap.length],
+    title: step.title,
+    desc: step.description
+  }));
 
   const documents = [
     'Original Birth Certificate',
@@ -30,7 +31,7 @@ export default function Admissions() {
     <div className="bg-ivory flex flex-col">
       <PageHero 
         title="Admissions 2026-27" 
-        subtitle="Step into a world of opportunities. Registration is now open for Nursery to Grade XII."
+        subtitle={admissionsData.subtitle}
         image="/images/students-campus.png"
       />
 

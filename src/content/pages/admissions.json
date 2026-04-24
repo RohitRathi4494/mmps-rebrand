@@ -1,0 +1,9 @@
+{
+  "subtitle": "Join our community of lifelong learners. Navigate the admissions process below.",
+  "steps": [
+    { "number": "01", "title": "Online Registration", "description": "Complete the preliminary online registration form with student and parent details to initiate the process." },
+    { "number": "02", "title": "Document Verification", "description": "Visit the school campus with original documents for verification by our admissions counselors." },
+    { "number": "03", "title": "Interaction Session", "description": "A brief, informal interaction between the student, parents, and the principal/coordinators." },
+    { "number": "04", "title": "Fee Submission", "description": "Upon selection, secure the admission by paying the requisite fee within the stipulated timeframe." }
+  ]
+}

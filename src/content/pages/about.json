@@ -1,0 +1,12 @@
+{
+  "subtitle": "A 30-year journey of academic excellence, strong values, and holistic student development.",
+  "welcomeHeading": "Three Decades of Educational Leadership",
+  "welcomeText1": "Established in 1992 under the guidance of the Maru Mal Education Board, M M Public School (MMPS) has grown into a premier educational institution in Gurugram, Haryana.",
+  "welcomeText2": "Our 5-acre co-educational campus is affiliated with CBSE and serves 800+ students from Nursery to Grade XII. We believe in providing a wholesome environment where traditional Indian values meet international perspectives — producing global citizens who are confident, compassionate, and capable.",
+  "values": [
+    { "title": "Architecture", "description": "Unique dual-block design — a dedicated Junior wing and a combined Senior block, ensuring age-appropriate learning environments." },
+    { "title": "Tradition", "description": "Deeply rooted in social productivity and Indian values, blended seamlessly with a modern global outlook." },
+    { "title": "Excellence", "description": "Proven track record of stellar board results, a celebrated sports legacy, and competitive examination successes." },
+    { "title": "Diversity", "description": "A thriving co-educational community of 800+ students from Nursery to Grade XII, fostering respect and collaboration." }
+  ]
+}

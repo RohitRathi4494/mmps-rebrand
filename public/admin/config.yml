@@ -49,3 +49,63 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Tag (New, Urgent, Info)", name: "tag", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
+
+  - name: "pages"
+    label: "Pages Configuration"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/content/pages/home.json"
+        fields:
+          - {label: "Hero Pattern Image", name: "heroBgImage", widget: "image", required: false}
+          - {label: "Hero Badge Pill", name: "heroBadge", widget: "string", default: "Admissions Open · Session 2026-27"}
+          - {label: "Hero Main Title", name: "heroTitle", widget: "string", default: "Where Vision"}
+          - {label: "Hero Highlight Word", name: "heroHighlight", widget: "string", default: "Meets Values"}
+          - {label: "Hero Subtitle", name: "heroSubtitle", widget: "text"}
+          - label: "Quick Statistics Strip"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Number Value", name: "value", widget: "string"}
+              - {label: "Label Text", name: "label", widget: "string"}
+              - {label: "Emoji Icon", name: "emoji", widget: "string"}
+
+      - label: "About Us Page"
+        name: "about"
+        file: "src/content/pages/about.json"
+        fields:
+          - {label: "Header Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Welcome Heading", name: "welcomeHeading", widget: "string"}
+          - {label: "Welcome Paragraph 1", name: "welcomeText1", widget: "text"}
+          - {label: "Welcome Paragraph 2", name: "welcomeText2", widget: "text"}
+          - label: "Core Values List"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Value Name", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      - label: "Admissions Page"
+        name: "admissions"
+        file: "src/content/pages/admissions.json"
+        fields:
+          - {label: "Header Subtitle", name: "subtitle", widget: "text"}
+          - label: "Admission Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - {label: "Step Number", name: "number", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      - label: "Contact Us Variables"
+        name: "contact"
+        file: "src/content/pages/contact.json"
+        fields:
+          - {label: "Main Address", name: "address", widget: "text"}
+          - {label: "Google Maps Embed Link", name: "mapLink", widget: "string"}
+          - {label: "Email Support", name: "email", widget: "string"}
+          - label: "Phone Numbers"
+            name: "phones"
+            widget: "list"
+            field: {name: "phone", widget: "string"}

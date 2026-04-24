@@ -1,21 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, PlayCircle } from 'lucide-react';
-
-const stats = [
-  { value: '800+', label: 'Students', emoji: '🎓' },
-  { value: '5 Acres', label: 'Green Campus', emoji: '🌿' },
-  { value: '30+', label: 'Years of Legacy', emoji: '🏆' },
-  { value: '100%', label: 'Board Results', emoji: '📊' },
-];
+import homeData from '../../content/pages/home.json';
 
 export default function HeroSection() {
+  const { heroBgImage, heroBadge, heroTitle, heroHighlight, heroSubtitle, stats } = homeData;
+
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
       {/* Background Image & Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/school.webp')" }}
+        style={{ backgroundImage: `url('${heroBgImage || "/school.webp"}')` }}
       >
         {/* The "Earlier" Overlay Style — Very Premium & Transparent */}
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/40 to-transparent mix-blend-multiply"></div>
@@ -32,17 +28,16 @@ export default function HeroSection() {
           {/* Pill badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/40 text-gold font-body text-sm font-semibold mb-6">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            Admissions Open · Session 2026-27
+            {heroBadge}
           </div>
 
           <h1 className="font-heading text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-white mb-6 leading-[1.05] tracking-tight">
-            Where Vision<br />
-            <span className="text-gold">Meets Values</span>
+            {heroTitle}<br />
+            <span className="text-gold">{heroHighlight}</span>
           </h1>
 
-          <p className="font-body text-lg md:text-xl text-white/75 mb-10 max-w-xl leading-relaxed">
-            Shaping global citizens with strong roots and global wings —
-            Gurugram's trusted name in CBSE education since 1992.
+          <p className="font-body text-lg md:text-xl text-white/75 mb-10 max-w-xl leading-relaxed whitespace-pre-wrap">
+            {heroSubtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

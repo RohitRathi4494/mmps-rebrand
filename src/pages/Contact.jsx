@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PageHero from '../components/ui/PageHero';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Youtube, Send } from 'lucide-react';
+import contactData from '../content/pages/contact.json';
 
 export default function Contact() {
   useEffect(() => {
@@ -35,10 +36,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-navy mb-2 text-lg">Our Location</h4>
-                    <p className="font-body text-navy/60 leading-relaxed italic">
-                      MM Public School, Sector 4, <br />
-                      Urban Estate, Gurugram, <br />
-                      Haryana - 122001, India
+                    <p className="font-body text-navy/60 leading-relaxed italic whitespace-pre-wrap">
+                      {contactData.address}
                     </p>
                   </div>
                 </div>
@@ -50,9 +49,11 @@ export default function Contact() {
                   <div>
                     <h4 className="font-heading font-bold text-navy mb-2 text-lg">Call Us</h4>
                     <div className="space-y-1">
-                      <p className="font-body text-navy/60 font-medium">0124-4570666</p>
-                      <p className="font-body text-navy/60 font-medium">0124-4270666</p>
-                      <p className="font-body text-green-500 font-bold">+91 93109 53788 (WhatsApp)</p>
+                      {contactData.phones.map((p, i) => (
+                        <p key={i} className={`font-body font-medium ${p.phone.includes('WhatsApp') ? 'text-green-500 font-bold' : 'text-navy/60'}`}>
+                          {p.phone}
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -63,7 +64,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-navy mb-2 text-lg">Email Support</h4>
-                    <p className="font-body text-navy/60">info@mmps.edu.in</p>
+                    <p className="font-body text-navy/60">{contactData.email}</p>
                     <p className="font-body text-navy/60">admissions@mmps.edu.in</p>
                   </div>
                 </div>
@@ -145,7 +146,7 @@ export default function Contact() {
           {/* Map Section */}
           <div className="mt-12 md:mt-32 rounded-[3.5rem] overflow-hidden shadow-2xl h-[450px] border-8 border-ivory relative group">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.8770732442436!2d77.021008076127!3d28.453118192209732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d6756610dd%3A0xc3c5756610dd0000!2sMM%20Public%20School%2C%20Sector%204!5e0!3m2!1sen!2sin!4v1713689234567!5m2!1sen!2sin" 
+              src={contactData.mapLink}
               className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" 
               allowFullScreen="" 
               loading="lazy" 
