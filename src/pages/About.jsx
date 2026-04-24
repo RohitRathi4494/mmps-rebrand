@@ -147,30 +147,56 @@ function VisionSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
-          {/* Vision */}
-          <div className="group bg-white p-10 md:p-14 rounded-[3rem] shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-60 h-60 bg-primary/5 rounded-bl-[15rem] -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700" />
-            <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-500 relative z-10">
-              <Eye className="text-primary group-hover:text-white transition-colors duration-500" size={36} />
+          {/* Mission Card */}
+          <div className="pt-16 md:pt-24 h-full">
+            <div className="relative bg-accent rounded-[2.5rem] px-5 sm:px-8 pb-14 pt-0 shadow-lg h-full transition-transform duration-500 hover:-translate-y-2">
+              {/* White Card (Overlapping) */}
+              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-20 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
+                <div className="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center mb-6 bg-gray-50/50">
+                  <Target className="text-navy stroke-1" size={40} />
+                </div>
+                <div className="relative mb-8 w-full max-w-[200px] flex items-center justify-center">
+                  <div className="absolute left-0 right-0 h-px bg-gray-200"></div>
+                  <h3 className="font-heading font-medium tracking-[0.2em] text-lg text-navy uppercase bg-white relative z-10 px-4">
+                    Mission
+                  </h3>
+                </div>
+                <p className="font-body text-navy/70 leading-relaxed">
+                  "Committed to providing students with the <span className="font-semibold text-accent">skills and knowledge</span> to become lifelong learners, effective communicators, and socially productive citizens — prepared for life's choices and challenges in a global society."
+                </p>
+              </div>
+              {/* Number Tab */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-12 bg-accent/90 backdrop-blur-sm rounded-b-2xl shadow-[0_10px_20px_rgba(255,107,53,0.3)] flex items-center justify-center isolate overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
+                <span className="text-white font-heading font-bold text-xl relative z-10 tracking-widest">01</span>
+              </div>
             </div>
-            <h2 className="font-heading font-bold text-4xl text-navy mb-6 uppercase tracking-tighter relative z-10">Vision</h2>
-            <div className="w-14 h-1.5 bg-accent rounded-full mb-8 relative z-10" />
-            <p className="font-heading font-medium text-xl md:text-2xl text-navy leading-relaxed italic relative z-10">
-              "To produce <span className="text-primary font-bold">global citizens</span> who respect and celebrate differences and become instruments of change in the world."
-            </p>
           </div>
 
-          {/* Mission */}
-          <div className="group bg-navy p-10 md:p-14 rounded-[3rem] shadow-2xl flex flex-col relative overflow-hidden hover:shadow-primary/20 transition-all duration-500">
-            <div className="absolute top-0 right-0 w-60 h-60 bg-white/5 rounded-bl-[15rem] -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700" />
-            <div className="w-20 h-20 rounded-3xl bg-white/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-all duration-500 relative z-10">
-              <Target className="text-accent group-hover:text-white transition-colors duration-500" size={36} />
+          {/* Vision Card */}
+          <div className="pt-16 md:pt-24 h-full">
+            <div className="relative bg-primary rounded-[2.5rem] px-5 sm:px-8 pb-14 pt-0 shadow-lg h-full transition-transform duration-500 hover:-translate-y-2">
+              {/* White Card (Overlapping) */}
+              <div className="relative bg-white rounded-[2rem] shadow-sm p-8 md:p-12 flex flex-col items-center text-center -mt-16 md:-mt-20 border border-gray-100 h-[calc(100%+3rem)] z-10 justify-center">
+                <div className="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center mb-6 bg-gray-50/50">
+                  <Eye className="text-navy stroke-1" size={40} />
+                </div>
+                <div className="relative mb-8 w-full max-w-[200px] flex items-center justify-center">
+                  <div className="absolute left-0 right-0 h-px bg-gray-200"></div>
+                  <h3 className="font-heading font-medium tracking-[0.2em] text-lg text-navy uppercase bg-white relative z-10 px-4">
+                    Vision
+                  </h3>
+                </div>
+                <p className="font-body text-navy/70 leading-relaxed">
+                  "To produce <span className="font-semibold text-primary">global citizens</span> who respect and celebrate differences and become instruments of change in the world."
+                </p>
+              </div>
+              {/* Number Tab */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-12 bg-primary/90 backdrop-blur-sm rounded-b-2xl shadow-[0_10px_20px_rgba(30,58,138,0.3)] flex items-center justify-center isolate overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
+                <span className="text-white font-heading font-bold text-xl relative z-10 tracking-widest">02</span>
+              </div>
             </div>
-            <h2 className="font-heading font-bold text-4xl text-white mb-6 uppercase tracking-tighter relative z-10">Mission</h2>
-            <div className="w-14 h-1.5 bg-accent rounded-full mb-8 relative z-10" />
-            <p className="font-heading font-medium text-xl md:text-2xl text-white leading-relaxed italic relative z-10">
-              "Committed to providing students with the <span className="text-accent font-bold">skills and knowledge</span> to become lifelong learners, effective communicators, and socially productive citizens — prepared for life's choices and challenges in a global society."
-            </p>
           </div>
         </div>
 
