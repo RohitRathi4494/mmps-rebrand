@@ -11,18 +11,5 @@
     "status": "published",
     "date": "2026-04-24",
     "id": 1777067198695
-  },
-  {
-    "title": "New test",
-    "slug": "new-test",
-    "excerpt": "Test Blog on the website",
-    "content": "<ul><li>sdjkbjkads</li></ul>",
-    "author": "MMPS Administration",
-    "category": "General",
-    "tags": [],
-    "image": null,
-    "status": "published",
-    "date": "2026-04-24",
-    "id": 1777066767350
   }
 ]
