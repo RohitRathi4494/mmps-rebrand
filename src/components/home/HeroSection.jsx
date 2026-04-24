@@ -14,11 +14,8 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
       {/* Background Image & Overlay */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/school.webp')",
-          backgroundAttachment: 'fixed',
-        }}
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/school.webp')" }}
       />
       {/* Dark overlay — stronger at bottom for text legibility */}
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
