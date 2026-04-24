@@ -9,14 +9,7 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init({
-          APIUrl: "https://mmpsrebrand.netlify.app/.netlify/identity"
-        });
-      }
-    </script>
-    <!-- Include the script that builds the page and powers Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Sveltia CMS is a direct, zero-config replacement for Decap CMS that natively supports GitHub login on Vercel without a backend server -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   </body>
 </html>
