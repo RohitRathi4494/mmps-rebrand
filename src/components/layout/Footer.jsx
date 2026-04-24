@@ -70,9 +70,9 @@ export default function Footer() {
             <ul className="grid grid-cols-1 gap-3 font-body text-sm">
               {[
                 { name: 'Online Admission Form', path: 'https://uniapply.com', external: true },
-                { name: 'School Leaving Certificate (SLC)', path: '/slc' },
+                { name: 'School Leaving Certificate (SLC)', path: '/tc' },
                 { name: 'Photo Gallery', path: '/gallery' },
-                { name: 'List of Holidays', path: '/holidays' },
+                { name: 'Academic Calendar', path: '/academics/calendar' },
                 { name: 'School Rules & Policy', path: '/rules-policy' },
                 { name: 'Mandatory Public Disclosure', path: '/cbse-disclosure' },
                 { name: 'Join Us / Careers', path: '/careers' },

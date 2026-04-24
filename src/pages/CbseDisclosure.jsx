@@ -37,7 +37,7 @@ export default function CbseDisclosure() {
       <PageHero 
         title="CBSE Disclosure" 
         subtitle="Mandatory Public Disclosure in compliance with CBSE circulars to maintain transparency and accountability."
-        image="https://source.unsplash.com/1600x900/?document,legal,white"
+        image="/school.webp"
       />
 
       <section className="py-20 md:py-32 bg-white">

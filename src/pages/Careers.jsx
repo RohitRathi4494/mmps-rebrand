@@ -16,7 +16,7 @@ export default function Careers() {
       <PageHero 
         title="Join Our Team" 
         subtitle="Empower the next generation. Join a passionate community of educators committed to excellence and values."
-        image="https://source.unsplash.com/1600x900/?interview,office,meeting"
+        image="/school.webp"
       />
 
       <section className="py-20 md:py-32 bg-white">

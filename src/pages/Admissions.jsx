@@ -31,7 +31,7 @@ export default function Admissions() {
       <PageHero 
         title="Admissions 2026-27" 
         subtitle="Step into a world of opportunities. Registration is now open for Nursery to Grade XII."
-        image="https://source.unsplash.com/1600x900/?students,happy,campus"
+        image="/images/students-campus.png"
       />
 
       {/* Process Section */}

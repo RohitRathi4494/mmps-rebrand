@@ -12,7 +12,7 @@ export default function Contact() {
       <PageHero 
         title="Get In Touch" 
         subtitle="Have questions? We're here to help. Reach out to us for admissions, general enquiries, or to schedule a campus visit."
-        image="https://source.unsplash.com/1600x900/?contact,office,reception"
+        image="/images/school-reception.png"
       />
 
       <section className="py-20 md:py-32 bg-white">

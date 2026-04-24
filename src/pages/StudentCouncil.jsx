@@ -3,12 +3,12 @@ import PageHero from '../components/ui/PageHero';
 import { Star, Shield, Users, Award, BookOpen, Flag } from 'lucide-react';
 
 const cabinet = [
-  { role: 'Head Boy', name: 'Master Arnav Singh', house: 'Vayu House', image: 'https://source.unsplash.com/400x500/?student,boy,uniform,1' },
-  { role: 'Head Girl', name: 'Miss Diya Mehta', house: 'Surya House', image: 'https://source.unsplash.com/400x500/?student,girl,uniform,1' },
-  { role: 'Vice Head Boy', name: 'Master Rohan Gupta', house: 'Prithvi House', image: 'https://source.unsplash.com/400x500/?student,boy,uniform,2' },
-  { role: 'Vice Head Girl', name: 'Miss Sneha Roy', house: 'Agni House', image: 'https://source.unsplash.com/400x500/?student,girl,uniform,2' },
-  { role: 'Sports Captain', name: 'Master Kabir Singh', house: 'Agni House', image: 'https://source.unsplash.com/400x500/?student,boy,sports' },
-  { role: 'Cultural Secretary', name: 'Miss Aisha Khan', house: 'Vayu House', image: 'https://source.unsplash.com/400x500/?student,girl,dance' },
+  { role: 'Head Boy', name: 'Master Arnav Singh', house: 'Vayu House', image: '/images/holistic.png' },
+  { role: 'Head Girl', name: 'Miss Diya Mehta', house: 'Surya House', image: '/images/holistic.png' },
+  { role: 'Vice Head Boy', name: 'Master Rohan Gupta', house: 'Prithvi House', image: '/images/holistic.png' },
+  { role: 'Vice Head Girl', name: 'Miss Sneha Roy', house: 'Agni House', image: '/images/holistic.png' },
+  { role: 'Sports Captain', name: 'Master Kabir Singh', house: 'Agni House', image: '/images/holistic.png' },
+  { role: 'Cultural Secretary', name: 'Miss Aisha Khan', house: 'Vayu House', image: '/images/holistic.png' },
 ];
 
 export default function StudentCouncil() {
@@ -19,7 +19,7 @@ export default function StudentCouncil() {
       <PageHero 
         title="Student Council" 
         subtitle="Empowering the youth to lead today for a better tomorrow. Meet the vanguard of MMPS."
-        image="https://source.unsplash.com/1600x900/?leadership,teens,group"
+        image="/images/classroom-students.png"
       />
 
       {/* Leadership Cabinet */}

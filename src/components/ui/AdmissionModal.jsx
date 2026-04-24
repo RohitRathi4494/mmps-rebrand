@@ -34,7 +34,7 @@ export default function AdmissionModal() {
       <div className="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
         {/* Banner area */}
         <div className="bg-gradient-to-r from-primary to-primary-700 h-32 relative">
-          <div className="absolute inset-0 opacity-20 bg-[url('https://source.unsplash.com/800x600/?school,education,students')] bg-cover bg-center mix-blend-overlay"></div>
+          <div className="absolute inset-0 opacity-20 bg-[url('/images/students-campus.png')] bg-cover bg-center mix-blend-overlay"></div>
           
           <button 
             onClick={() => setIsOpen(false)}

@@ -3,10 +3,10 @@ import PageHero from '../components/ui/PageHero';
 import { Play, Calendar, Eye, Share2 } from 'lucide-react';
 
 const videos = [
-  { id: '1', title: 'MMPS Campus Walking Tour', duration: '5:24', views: '12K', date: 'Jan 2025', thumb: 'https://source.unsplash.com/800x600/?school,architecture' },
-  { id: '2', title: 'MMMICT 2024 Grand Finale Highlights', duration: '12:10', views: '25K', date: 'Dec 2024', thumb: 'https://source.unsplash.com/800x600/?cricket,stadium' },
-  { id: '3', title: 'Annual Day 2024 "Culture Pulse"', duration: '45:00', views: '8K', date: 'Nov 2024', thumb: 'https://source.unsplash.com/800x600/?stage,dance' },
-  { id: '4', title: 'Life at MMPS - Student Perspectives', duration: '3:15', views: '5K', date: 'Oct 2024', thumb: 'https://source.unsplash.com/800x600/?students,group' },
+  { id: '1', title: 'MMPS Campus Walking Tour', duration: '5:24', views: '12K', date: 'Jan 2025', thumb: '/images/campus-aerial.png' },
+  { id: '2', title: 'MMMICT 2024 Grand Finale Highlights', duration: '12:10', views: '25K', date: 'Dec 2024', thumb: '/images/cricket-tournament.png' },
+  { id: '3', title: 'Annual Day 2024 "Culture Pulse"', duration: '45:00', views: '8K', date: 'Nov 2024', thumb: '/school.webp' },
+  { id: '4', title: 'Life at MMPS - Student Perspectives', duration: '3:15', views: '5K', date: 'Oct 2024', thumb: '/images/classroom-students.png' },
 ];
 
 export default function VideoGallery() {
@@ -17,7 +17,7 @@ export default function VideoGallery() {
       <PageHero 
         title="Video Gallery" 
         subtitle="Watch the school come to life through our curated collection of events, tours, and student projects."
-        image="https://source.unsplash.com/1600x900/?film,cinema,theatre"
+        image="/school.webp"
       />
 
       <section className="py-20 md:py-32 bg-white">

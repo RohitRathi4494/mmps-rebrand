@@ -17,7 +17,7 @@ export default function HouseSystem() {
       <PageHero 
         title="House System" 
         subtitle="Cultivating healthy competition, leadership, and a sense of belonging through our four distinct houses."
-        image="https://source.unsplash.com/1600x900/?community,flags,colors"
+        image="/images/holistic.png"
       />
 
       {/* House Grid */}
@@ -107,7 +107,7 @@ export default function HouseSystem() {
             
             <div className="lg:col-span-7">
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white aspect-video lg:aspect-auto h-full min-h-[400px]">
-                <img src="https://source.unsplash.com/1200x800/?students,sports,team" alt="House Events" className="w-full h-full object-cover" />
+                <img src="/images/cricket-tournament.png" alt="House Events" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-navy/20"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white w-full px-8">
                   <div className="w-20 h-20 rounded-full border-4 border-white flex items-center justify-center mx-auto mb-6 bg-white/10 backdrop-blur">

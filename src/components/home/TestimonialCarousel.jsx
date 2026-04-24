@@ -7,21 +7,21 @@ const testimonials = [
     relation: "Parent of Vivaan, Grade VIII",
     text: "MMPS has provided my son with the perfect balance of academic rigor and extracurricular engagement. The teachers are incredibly supportive and accessible.",
     rating: 5,
-    img: "https://source.unsplash.com/150x150/?indian,woman,smiling"
+    img: "https://ui-avatars.com/api/?name=Priya+Sharma&background=0D8ABC&color=fff"
   },
   {
     name: "Mr. Rajeev Mehta",
     relation: "Parent of Diya, Grade XII",
     text: "Choosing MMPS for our daughter's senior secondary education was the best decision. The career counseling and modern labs prepared her well for her board exams.",
     rating: 5,
-    img: "https://source.unsplash.com/150x150/?indian,man,smiling"
+    img: "https://ui-avatars.com/api/?name=Vikram+Singh&background=F59E0B&color=fff"
   },
   {
     name: "Mrs. Kavita Singh",
     relation: "Parent of Aarav, Grade V",
     text: "The Junior Block is fantastic! The lush green play areas and the dedicated staff have made my child's foundational years truly joyful and enriching.",
     rating: 5,
-    img: "https://source.unsplash.com/150x150/?indian,woman,happy"
+    img: "https://ui-avatars.com/api/?name=Anjali+Desai&background=10B981&color=fff"
   }
 ];
 

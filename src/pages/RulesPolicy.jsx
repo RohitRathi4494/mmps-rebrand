@@ -53,7 +53,7 @@ export default function RulesPolicy() {
       <PageHero 
         title="Rules & Policy" 
         subtitle="Ensuring a safe, disciplined, and productive environment for all members of the MMPS family."
-        image="https://source.unsplash.com/1600x900/?law,rules,library"
+        image="/school.webp"
       />
 
       <section className="py-20 md:py-32 bg-white">

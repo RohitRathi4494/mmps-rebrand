@@ -25,7 +25,7 @@ export default function Sports() {
       <PageHero 
         title="Sports Excellence" 
         subtitle="Fostering discipline, spirit, and health through a wide range of athletic activities and tournaments."
-        image="https://source.unsplash.com/1600x900/?cricket,pitch,stadium"
+        image="/images/cricket-tournament.png"
       />
 
       {/* MMMICT Highlight */}
@@ -62,7 +62,7 @@ export default function Sports() {
             
             <div className="order-1 lg:order-2">
               <div className="relative rounded-[3rem] overflow-hidden shadow-xl aspect-square lg:aspect-[4/5]">
-                <img src="https://source.unsplash.com/800x1000/?cricket,player,batting" alt="Cricket Highlight" className="w-full h-full object-cover" />
+                <img src="/images/cricket-tournament.png" alt="Cricket Highlight" className="w-full h-full object-cover" />
                 <div className="absolute top-8 left-8 bg-white/90 backdrop-blur rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col items-center animate-bounce-slow">
                   <span className="font-heading font-bold text-4xl text-navy">25</span>
                   <span className="font-body text-[10px] uppercase font-bold text-navy/40 tracking-widest">Glorious Years</span>

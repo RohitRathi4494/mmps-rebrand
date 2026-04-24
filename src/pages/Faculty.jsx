@@ -6,26 +6,26 @@ const facultyGroups = [
   {
     category: 'Leadership',
     members: [
-      { name: 'Mrs. ABC', role: 'Principal', qualification: 'M.A., B.Ed.', experience: '25+ Years', image: 'https://source.unsplash.com/400x500/?professional,woman' },
-      { name: 'Mr. XYZ', role: 'Vice Principal', qualification: 'M.Sc., B.Ed.', experience: '20+ Years', image: 'https://source.unsplash.com/400x500/?professional,man' },
+      { name: 'Dr. (Mrs.) R. Sharma', role: 'Principal', qualification: 'M.A., B.Ed., Ph.D.', experience: '25+ Years', image: '/images/teacher-f2.png' },
+      { name: 'Mr. A. K. Singh', role: 'Vice Principal', qualification: 'M.Sc., B.Ed.', experience: '20+ Years', image: '/images/teacher-m2.png' },
     ]
   },
   {
-    category: 'Secondary & Senior Secondary',
+    category: 'Senior & Secondary Wing',
     members: [
-      { name: 'Ms. Priya Sharma', role: 'PGT English', qualification: 'M.A., B.Ed.', experience: '12 Years', image: 'https://source.unsplash.com/400x500/?teacher,woman,1' },
-      { name: 'Mr. Rajesh Kumar', role: 'PGT Mathematics', qualification: 'M.Sc., B.Ed.', experience: '15 Years', image: 'https://source.unsplash.com/400x500/?teacher,man,1' },
-      { name: 'Dr. Sunita Gupta', role: 'PGT Chemistry', qualification: 'Ph.D., M.Sc.', experience: '10 Years', image: 'https://source.unsplash.com/400x500/?teacher,woman,2' },
-      { name: 'Mr. Amit Singh', role: 'PGT Physics', qualification: 'M.Sc., M.Phil', experience: '14 Years', image: 'https://source.unsplash.com/400x500/?teacher,man,2' },
+      { name: 'Ms. Priya Sharma', role: 'PGT English', qualification: 'M.A., B.Ed.', experience: '12 Years', image: '/images/teacher-f1.png' },
+      { name: 'Mr. Rajesh Kumar', role: 'PGT Mathematics', qualification: 'M.Sc., B.Ed.', experience: '15 Years', image: '/images/teacher-m1.png' },
+      { name: 'Dr. Sunita Gupta', role: 'PGT Chemistry', qualification: 'Ph.D., M.Sc.', experience: '10 Years', image: '/images/teacher-f2.png' },
+      { name: 'Mr. Amit Singh', role: 'PGT Physics', qualification: 'M.Sc., M.Phil', experience: '14 Years', image: '/images/teacher-m2.png' },
     ]
   },
   {
     category: 'Primary & Middle Wing',
     members: [
-      { name: 'Ms. Neha Verma', role: 'TGT Social Studies', qualification: 'M.A., B.Ed.', experience: '8 Years', image: 'https://source.unsplash.com/400x500/?teacher,woman,3' },
-      { name: 'Ms. Kavita Rai', role: 'TGT Science', qualification: 'M.Sc., B.Ed.', experience: '9 Years', image: 'https://source.unsplash.com/400x500/?teacher,woman,4' },
-      { name: 'Mr. Vikas Reddy', role: 'Physical Education', qualification: 'M.P.Ed.', experience: '11 Years', image: 'https://source.unsplash.com/400x500/?teacher,man,3' },
-      { name: 'Ms. Anju Bala', role: 'PRT All Subjects', qualification: 'B.A., B.Ed.', experience: '6 Years', image: 'https://source.unsplash.com/400x500/?teacher,woman,5' },
+      { name: 'Ms. Neha Verma', role: 'TGT Social Studies', qualification: 'M.A., B.Ed.', experience: '8 Years', image: '/images/teacher-f1.png' },
+      { name: 'Ms. Kavita Rai', role: 'TGT Science', qualification: 'M.Sc., B.Ed.', experience: '9 Years', image: '/images/teacher-f2.png' },
+      { name: 'Mr. Vikas Reddy', role: 'Physical Education', qualification: 'M.P.Ed.', experience: '11 Years', image: '/images/teacher-m1.png' },
+      { name: 'Ms. Anju Bala', role: 'PRT All Subjects', qualification: 'B.A., B.Ed.', experience: '6 Years', image: '/images/teacher-f1.png' },
     ]
   }
 ];
@@ -38,8 +38,25 @@ export default function Faculty() {
       <PageHero 
         title="Our Faculty" 
         subtitle="Dedicated educators committed to nurturing minds and building character through passion and expertise."
-        image="https://source.unsplash.com/1600x900/?teachers,classroom,education"
+        image="/images/classroom-students.png"
       />
+
+      {/* Quick Stats Strip */}
+      <section className="bg-navy py-12 border-t-8 border-accent">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10 text-center">
+          {[
+            { metric: '50+', label: 'Expert Teachers' },
+            { metric: '15 Yrs', label: 'Avg. Experience' },
+            { metric: '1:20', label: 'Teacher-Student Ratio' },
+            { metric: '100%', label: 'CBSE Certified' },
+          ].map((s, i) => (
+            <div key={i} className="flex flex-col">
+              <span className="font-heading font-bold text-3xl md:text-4xl text-white mb-2">{s.metric}</span>
+              <span className="font-body text-white/50 text-xs uppercase tracking-widest">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

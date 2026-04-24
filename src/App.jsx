@@ -29,6 +29,8 @@ import RulesPolicy from './pages/RulesPolicy';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 // ── New Admissions Pages ─────────────────────────────────
+import AdmissionsProcess from './pages/AdmissionsProcess';
+import AcademicCalendar from './pages/AcademicCalendar';
 import OnlineRegistration from './pages/OnlineRegistration';
 import FeeStructure from './pages/FeeStructure';
 import FAQs from './pages/FAQs';
@@ -69,11 +71,11 @@ function App() {
             <Route path="/academics/primary" element={<Primary />} />
             <Route path="/academics/middle" element={<Middle />} />
             <Route path="/academics/senior" element={<SeniorYears />} />
-            <Route path="/academics/calendar" element={<PlaceholderPage title="Academic Calendar" />} />
+            <Route path="/academics/calendar" element={<AcademicCalendar />} />
 
             {/* Admissions */}
             <Route path="/admissions" element={<Navigate to="/admissions/process" replace />} />
-            <Route path="/admissions/process" element={<PlaceholderPage title="Admission Process & Criteria" />} />
+            <Route path="/admissions/process" element={<AdmissionsProcess />} />
             <Route path="/admissions/fee-structure" element={<FeeStructure />} />
             <Route path="/admissions/register" element={<OnlineRegistration />} />
             <Route path="/admissions/faqs" element={<FAQs />} />

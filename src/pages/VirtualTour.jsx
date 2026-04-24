@@ -10,7 +10,7 @@ export default function VirtualTour() {
       <PageHero 
         title="360° Virtual Tour" 
         subtitle="Explore our world-class campus, modern laboratories, and vibrant classrooms from the comfort of your home."
-        image="https://source.unsplash.com/1600x900/?virtual-reality,architecture,modern"
+        image="/images/campus-aerial.png"
       />
 
       <section className="py-20 md:py-32 bg-white">
@@ -57,7 +57,7 @@ export default function VirtualTour() {
                 
                 {/* Visual Placeholder Background */}
                 <img 
-                  src="https://source.unsplash.com/1600x900/?school,architecture,interior" 
+                  src="/images/classroom-students.png" 
                   alt="360 Tour View" 
                   className="w-full h-full object-cover blur-sm opacity-50 grayscale"
                 />
