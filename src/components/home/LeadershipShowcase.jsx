@@ -51,8 +51,8 @@ export default function LeadershipShowcase() {
               <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-white shadow-xl mb-6">
                 <img 
                   src={activeTab === 'chairman' 
-                    ? "https://source.unsplash.com/400x400/?professional,indian,man" 
-                    : "https://source.unsplash.com/400x400/?professional,indian,woman"
+                    ? "/images/chairman.png" 
+                    : "/images/principal.png"
                   } 
                   alt={activeTab === 'chairman' ? "Chairman" : "Principal"} 
                   className="w-full h-full object-cover transition-opacity duration-500"

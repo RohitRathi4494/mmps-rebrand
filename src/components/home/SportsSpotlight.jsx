@@ -8,7 +8,7 @@ export default function SportsSpotlight() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="bg-navy rounded-[2.5rem] overflow-hidden shadow-2xl relative">
-          <div className="absolute inset-0 bg-[url('https://source.unsplash.com/1200x800/?cricket,stadium,sports')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-[url('/images/cricket-tournament.png')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent"></div>
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-16">

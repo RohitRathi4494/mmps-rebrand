@@ -7,7 +7,7 @@ export default function VirtualTourBanner() {
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?school,campus,architecture')] bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-[url('/images/campus-aerial.png')] bg-cover bg-center bg-fixed"
       ></div>
       
       {/* Overlay */}

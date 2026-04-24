@@ -41,7 +41,7 @@ export default function Academics() {
       <PageHero 
         title="Academic Excellence" 
         subtitle="Our curriculum is designed to foster intellectual growth, creativity, and social responsibility across all levels."
-        image="https://source.unsplash.com/1600x900/?books,library,learning"
+        image="/images/library.png"
       />
 
       {/* Curriculum Blocks */}
@@ -64,7 +64,7 @@ export default function Academics() {
                     <div className={cn("absolute -inset-4 rounded-[3rem] blur-2xl opacity-20", level.color)}></div>
                     <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]">
                       <img 
-                        src={`https://source.unsplash.com/800x1000/?student,learning,class-${idx}`} 
+                        src={idx === 0 ? "/images/holistic.png" : idx === 1 ? "/images/classroom.png" : "/images/faculty.png"} 
                         alt={level.title} 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />

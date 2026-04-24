@@ -2,12 +2,12 @@ import React from 'react';
 import { Microscope, Monitor, BookOpen, Music, Club, Map } from 'lucide-react';
 
 const facilities = [
-  { name: 'Smart Classrooms', desc: 'Interactive boards in all grades.', icon: Monitor, img: 'https://source.unsplash.com/600x400/?classroom,smartboard' },
-  { name: 'Science Labs', desc: 'Modern Physics & Chemistry labs.', icon: Microscope, img: 'https://source.unsplash.com/600x400/?laboratory,science,chemistry' },
-  { name: 'Library & Reading', desc: 'Vast collection of journals & books.', icon: BookOpen, img: 'https://source.unsplash.com/600x400/?library,books' },
-  { name: 'Arts & Music Room', desc: 'Dedicated space for performing arts.', icon: Music, img: 'https://source.unsplash.com/600x400/?music,guitar,art' },
-  { name: 'Sports Fields', desc: 'Cricket & Football arenas.', icon: Club, img: 'https://source.unsplash.com/600x400/?football,grass,field' },
-  { name: 'Outdoor Lawns', desc: '5-acre lush green campus space.', icon: Map, img: 'https://source.unsplash.com/600x400/?park,campus,lawn' },
+  { name: 'Smart Classrooms', desc: 'Interactive boards in all grades.', icon: Monitor, img: '/images/classroom.png' },
+  { name: 'Science Labs', desc: 'Modern Physics & Chemistry labs.', icon: Microscope, img: '/images/science-lab.png' },
+  { name: 'Library & Reading', desc: 'Vast collection of journals & books.', icon: BookOpen, img: '/images/library.png' },
+  { name: 'Arts & Music Room', desc: 'Dedicated space for performing arts.', icon: Music, img: '/images/music-room.png' },
+  { name: 'Sports Fields', desc: 'Cricket & Football arenas.', icon: Club, img: '/images/cricket-tournament.png' },
+  { name: 'Outdoor Lawns', desc: '5-acre lush green campus space.', icon: Map, img: '/images/campus-aerial.png' },
 ];
 
 export default function FacilityGrid() {

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const council = [
-  { name: 'Aarav Sharma', role: 'Head Boy', img: 'https://source.unsplash.com/300x300/?boy,student,indian', badge: 'bg-primary' },
-  { name: 'Ananya Gupta', role: 'Head Girl', img: 'https://source.unsplash.com/300x300/?girl,student,indian', badge: 'bg-primary' },
-  { name: 'Vivaan Verma', role: 'Sports Captain', img: 'https://source.unsplash.com/300x300/?athlete,boy,student,indian', badge: 'bg-accent' },
-  { name: 'Diya Patel', role: 'Cultural Secretary', img: 'https://source.unsplash.com/300x300/?girl,artist,student', badge: 'bg-gold-500' },
+  { name: 'Aarav Sharma', role: 'Head Boy', img: '/images/head-boy.png', badge: 'bg-primary' },
+  { name: 'Ananya Gupta', role: 'Head Girl', img: '/images/head-girl.png', badge: 'bg-primary' },
+  { name: 'Vivaan Verma', role: 'Sports Captain', img: '/images/sports-captain.png', badge: 'bg-accent' },
+  { name: 'Diya Patel', role: 'Cultural Secretary', img: '/images/cultural-secretary.png', badge: 'bg-gold-500' },
 ];
 
 export default function StudentCouncil() {

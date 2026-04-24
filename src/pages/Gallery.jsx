@@ -6,15 +6,15 @@ import { cn } from '../lib/utils';
 const categories = ['All', 'Campus', 'Events', 'Sports', 'Lab & Activities'];
 
 const galleryItems = [
-  { img: 'https://source.unsplash.com/800x600/?school,building', cat: 'Campus', title: 'Main Administration Block' },
-  { img: 'https://source.unsplash.com/800x600/?students,celebration', cat: 'Events', title: 'Annual Day Celebrations' },
-  { img: 'https://source.unsplash.com/800x600/?cricket,stadium', cat: 'Sports', title: 'XXIV MMMICT 2024' },
-  { img: 'https://source.unsplash.com/800x600/?science,lab', cat: 'Lab & Activities', title: 'Chemistry Practical Session' },
-  { img: 'https://source.unsplash.com/800x600/?school,campus,green', cat: 'Campus', title: 'Lush Green Lawns' },
-  { img: 'https://source.unsplash.com/800x600/?debate,hall', cat: 'Events', title: 'Inter-House Debate Meet' },
-  { img: 'https://source.unsplash.com/800x600/?kids,computer', cat: 'Lab & Activities', title: 'Junior IT Workshop' },
-  { img: 'https://source.unsplash.com/800x600/?basketball,court', cat: 'Sports', title: 'Inter-School Basketball Match' },
-  { img: 'https://source.unsplash.com/800x600/?library,books', cat: 'Campus', title: 'Resource Rich Library' },
+  { img: '/school.webp', cat: 'Campus', title: 'Main Administration Block' },
+  { img: '/images/investiture-ceremony.png', cat: 'Events', title: 'Annual Day Celebrations' },
+  { img: '/images/cricket-tournament.png', cat: 'Sports', title: 'XXIV MMMICT 2024' },
+  { img: '/images/science-lab.png', cat: 'Lab & Activities', title: 'Chemistry Practical Session' },
+  { img: '/images/campus-aerial.png', cat: 'Campus', title: 'Lush Green Lawns' },
+  { img: '/images/holistic.png', cat: 'Events', title: 'Inter-House Debate Meet' },
+  { img: '/images/computer-lab.png', cat: 'Lab & Activities', title: 'Junior IT Workshop' },
+  { img: '/images/basketball.png', cat: 'Sports', title: 'Inter-School Basketball Match' },
+  { img: '/images/library.png', cat: 'Campus', title: 'Resource Rich Library' },
 ];
 
 export default function Gallery() {
@@ -31,7 +31,7 @@ export default function Gallery() {
       <PageHero 
         title="Visual Journey" 
         subtitle="Capturing the vibrant moments, achievements, and facilities that define the MMPS life."
-        image="https://source.unsplash.com/1600x900/?photography,camera,gallery"
+        image="/images/campus-aerial.png"
       />
 
       <section className="py-20 md:py-32 bg-white">

@@ -4,9 +4,9 @@ import { Calendar as CalendarIcon, ArrowRight, MapPin } from 'lucide-react';
 
 export default function NewsAndEvents() {
   const news = [
-    { title: 'CBSE 2024-25 Board Results Announced', date: 'May 12, 2025', excerpt: 'Our students have once again made us proud with a 100% pass rate and multiple district toppers.', img: 'https://source.unsplash.com/100x100/?students,happy' },
-    { title: 'Annual Science Exhibition', date: 'April 28, 2025', excerpt: 'Innovation at its peak as middle schoolers present working models on renewable energy.', img: 'https://source.unsplash.com/100x100/?science,exhibition' },
-    { title: 'Inter-School Debate Competition', date: 'April 15, 2025', excerpt: 'Vayu house secures the first runner-up position in the regional debate championship.', img: 'https://source.unsplash.com/100x100/?debate,speech' },
+    { title: 'CBSE 2024-25 Board Results Announced', date: 'May 12, 2025', excerpt: 'Our students have once again made us proud with a 100% pass rate and multiple district toppers.', img: '/images/scholarship-test.png' },
+    { title: 'Annual Science Exhibition', date: 'April 28, 2025', excerpt: 'Innovation at its peak as middle schoolers present working models on renewable energy.', img: '/images/science-lab.png' },
+    { title: 'Inter-School Debate Competition', date: 'April 15, 2025', excerpt: 'Vayu house secures the first runner-up position in the regional debate championship.', img: '/images/holistic.png' },
   ];
 
   const events = [

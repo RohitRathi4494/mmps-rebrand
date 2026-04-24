@@ -45,12 +45,12 @@ export default function WelcomeIntro() {
               <div className="relative">
                 {/* Director/Principal Photo Placeholders */}
                 <img 
-                  src="https://source.unsplash.com/100x100/?portrait,professional,man" 
+                  src="/images/chairman.png" 
                   alt="Chairman" 
                   className="w-16 h-16 rounded-full border-4 border-white shadow-md z-20 relative object-cover"
                 />
                 <img 
-                  src="https://source.unsplash.com/100x100/?portrait,professional,woman" 
+                  src="/images/principal.png" 
                   alt="Principal" 
                   className="w-16 h-16 rounded-full border-4 border-white shadow-md z-10 absolute left-8 top-0 object-cover"
                 />
